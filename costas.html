@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Exercícios de Costas</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exercícios de Costas - FitTrack">
+    <meta name="keywords" content="exercícios costas, fitness, saúde, musculação">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .pitch-content, .video {
+            margin-bottom: 30px;
+        }
+
+        .pitch-content,
+        .video {
+            margin-bottom: 30px;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row-flex .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+        .exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.exercise-row .col-md-6 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-bottom: 30px;
+}
+
+.exercise-row .col-md-12 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-top: 20px;
+}
+
+.pitch-content {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.pitch-content:hover {
+    transform: translateY(-10px);
+}
+
+.pitch-content h1 {
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.pitch-content p {
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.pitch-intro p {
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+
+.video-credit {
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Alternar navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="indexlogado.html">
+                        <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                        <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                        <li><a class="page-scroll" href="#contato">Contato</a></li>
+                        <li><a href="php/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Fim Navbar -->
+
+        <!-- Seção principal -->
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">EXERCÍCIOS DE COSTAS</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Fortaleça e defina suas costas com estes exercícios</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de exercícios -->
+     <!-- Seção de exercícios para as costas -->
+<div class="pitch text-center" id="treinamento">
+    <div class="container">
+        <div class="pitch-intro">
+            <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS PARA AS COSTAS</h1>
+            <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar suas costas.</p>
+        </div>
+        <div class="row row-flex">
+            <!-- Exercício 1 -->
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>PUXADA FRONTAL</h1>
+                    <p><strong>Passos:</strong><br>1. Sente-se na máquina de puxada com os pés apoiados no chão.<br>2. Segure a barra com as mãos afastadas.<br>3. Puxe a barra para baixo até tocar a parte superior do peito.<br>4. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/Puxada Frontal.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>BARRA FIXA</h1>
+                    <p><strong>Passos:</strong><br>1. Segure a barra com as mãos afastadas.<br>2. Puxe o corpo para cima até o queixo ultrapassar a barra.<br>3. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/Barra fixa.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            <!-- Exercício 2 -->
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>REMADA CURVADA</h1>
+                    <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros.<br>2. Flexione ligeiramente os joelhos e incline o tronco para frente.<br>3. Puxe a barra em direção ao abdômen.<br>4. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/Remada Curvada.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            <!-- Exercício 3 -->
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>PULLDOWN</h1>
+                    <p><strong>Passos:</strong><br>1. Sente-se na máquina de pulldown com os pés apoiados no chão.<br>2. Segure a barra com as mãos afastadas.<br>3. Puxe a barra para baixo até tocar a parte superior do peito.<br>4. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/PULLDOWN.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            <!-- Exercício 4 -->
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>REMADA UNILATERAL</h1>
+                    <p><strong>Passos:</strong><br>1. Apoie um joelho e uma mão em um banco.<br>2. Segure um haltere com a outra mão.<br>3. Puxe o haltere em direção ao abdômen.<br>4. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/REMADA UNILATERAL.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            <!-- Exercício 5 -->
+            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                <div class="pitch-content">
+                    <h1>LEVANTAMENTO TERRA</h1>
+                    <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros.<br>2. Flexione os joelhos e segure a barra.<br>3. Levante a barra mantendo as costas retas.<br>4. Volte lentamente à posição inicial.</p>
+                </div>
+                <div class="video">
+                    <iframe width="100%" height="315" src="videos/Costa/Terra.mp4" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>   
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <!-- <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

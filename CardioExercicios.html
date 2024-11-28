@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Treinamento Cardiovascular</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Treinamento Cardiovascular - FitTrack">
+    <meta name="keywords" content="treinamento cardiovascular, exercícios, saúde, fitness">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+       
+        h1,
+        h2,
+        h3,
+        .pitch-content p {
+            color: rgb(0, 204, 255) !important;
+
+        }
+
+        a[href="mailto:suportefitrack@gmail.com"] {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        ul.wow.fadeInUp li {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        .highlighted-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: rgb(0, 204, 255) !important;
+            padding: 10px;
+            border-radius: 5px;
+            /* Bordas arredondadas */
+        }
+  
+    .pitch-content {
+        background-color: #2c2f33;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .pitch-content:hover {
+        transform: translateY(-10px);
+    }
+
+    .pitch-content img {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .pitch-content img:hover {
+        transform: scale(1.05);
+    }
+
+    .pitch-content h1 {
+        color: #00d4ff;
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 15px;
+    }
+
+    .pitch-content p {
+        color: #b3b3b3;
+        font-size: 16px;
+    }
+
+    .pitch-content .tips {
+        color: #fff;
+        font-style: italic;
+        margin-top: 10px;
+    }
+
+    .pitch-content .image-author {
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #8a8a8a;
+    }
+
+    .pitch-content .image-author a {
+        color: #00d4ff;
+    }
+
+    .pitch-intro p {
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#exercicios">Exercícios</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="nova-hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">TREINAMENTO CARDIOVASCULAR</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Prepare-se para fortalecer seu coração e
+                                melhorar sua saúde cardiovascular com nosso programa especializado.</p>
+                            <a href="#exercicios" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pitch text-center" id="exercicios">
+                <div class="container">
+                    <div class="pitch-intro">
+                        <h1 class="wow fadeInDown" data-wow-delay="0.2s">SEQUÊNCIA DE AULAS</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">Explore uma série de aulas com exemplos e
+                            instruções passo a passo para realizar exercícios cardiovasculares corretamente.</p>
+                    </div>
+                    <div class="row">
+                        <!-- Aula 1 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <img src="images/Cardio/running-4782722_1280.jpg" alt="Corrida" class="img-fluid" style="max-height: 150px; width: 100%; object-fit: cover;">
+                                <p class="image-author">Imagem de <a href="https://pixabay.com/pt/users/fotorech-5554393/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4782722">Daniel Reche</a> de <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4782722">Pixabay</a></p>
+                                <h1>CORRIDA</h1>
+                                <p><strong>Duração recomendada:</strong> 30-60 minutos<br>
+                                <strong>Nível de Dificuldade:</strong> Fácil a Avançado</p>
+                                <p>1. Inicie com um aquecimento leve por 5-10 minutos.<br>
+                                2. Mantenha uma velocidade moderada, ajustando conforme seu condicionamento físico.<br>
+                                3. Ao final, reduza o ritmo gradualmente até caminhar para esfriar.</p>
+                                <p class="tips"><strong>Dica:</strong> Mantenha a postura ereta e olhe sempre para a frente.</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Aula 2 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <img src="images/Cardio/sunset-6297462_1280.jpg" alt="Ciclismo" class="img-fluid" style="max-height: 150px; width: 100%; object-fit: cover;">
+                                <p class="image-author">Imagem de <a href="https://pixabay.com/pt/users/tranduyet-15201889/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6297462">Duyệt Trần Văn</a> de <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6297462">Pixabay</a></p>
+                                <h1>CICLISMO</h1>
+                                <p><strong>Duração recomendada:</strong> 45-90 minutos<br>
+                                <strong>Nível de Dificuldade:</strong> Moderado a Avançado</p>
+                                <p>1. Certifique-se de usar capacete e roupas adequadas.<br>
+                                2. Ajuste a bicicleta conforme sua altura para maior conforto.<br>
+                                3. Pedale em um ritmo que consiga manter por longos períodos sem fadiga excessiva.</p>
+                                <p class="tips"><strong>Dica:</strong> Mantenha a cadência constante para otimizar o esforço.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <!-- Aula 3 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <img src="images/Cardio/people-2588747_1280.jpg" alt="Natação" class="img-fluid" style="max-height: 150px; width: 100%; object-fit: cover;">
+                                <p class="image-author">Imagem de <a href="https://pixabay.com/pt/users/stocksnap-894430/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2588747">StockSnap</a> de <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2588747">Pixabay</a></p>
+                                <h1>NATAÇÃO</h1>
+                                <p><strong>Duração recomendada:</strong> 30-60 minutos<br>
+                                <strong>Nível de Dificuldade:</strong> Fácil a Moderado</p>
+                                <p>1. Comece com um leve aquecimento fora da água.<br>
+                                2. Escolha entre nado livre ou peito para começar, alternando entre eles.<br>
+                                3. Mantenha uma respiração controlada e relaxada durante todo o treino.</p>
+                                <p class="tips"><strong>Dica:</strong> Foque na técnica antes da velocidade.</p>
+                            </div>
+                        </div>
+                    
+                        <!-- Aula 4 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <img src="images/Cardio/stairs-1627424_1280.jpg" alt="Exercícios em escadas" class="img-fluid" style="max-height: 150px; width: 100%; object-fit: cover;">
+                                <p class="image-author">Imagem de <a href="https://pixabay.com/pt/users/wokandapix-614097/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1627424">WOKANDAPIX</a> de <a href="https://pixabay.com/pt//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1627424">Pixabay</a></p>
+                                <h1>EXERCÍCIOS EM ESCADAS</h1>
+                                <p><strong>Duração recomendada:</strong> 15-30 minutos<br>
+                                <strong>Nível de Dificuldade:</strong> Moderado</p>
+                                <p>1. Use escadas com degraus uniformes e seguros.<br>
+                                2. Suba e desça em ritmo constante para trabalhar pernas e cardio.<br>
+                                3. Mantenha a coluna ereta e os ombros relaxados durante o movimento.</p>
+                                <p class="tips"><strong>Dica:</strong> Evite apoiar-se nos corrimãos para um treino mais intenso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno
+                        Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem
+                        inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <!-- <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>-->
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

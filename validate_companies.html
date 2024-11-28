@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <title>Validar Empresas - FitTrack</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .form-horizontal .control-label {
+      color: white;
+    }
+
+    h1 {
+      color: rgb(0, 204, 255) !important;
+    }
+
+    .highlighted-text {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: rgb(0, 204, 255) !important;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    a[href="mailto:suportefitrack@gmail.com"] {
+      color: rgb(0, 204, 255) !important;
+    }
+
+    #reset-error {
+      margin-top: 10px;
+      display: none;
+    }
+
+    #reset-error.success {
+      color: rgb(0, 253, 0);
+    }
+
+    #reset-error.error {
+      color: red;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-approve {
+      background-color: #28a745;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-approve:hover {
+      background-color: #218838;
+    }
+
+    .btn-reject {
+      background-color: #dc3545;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-reject:hover {
+      background-color: #c82333;
+    }
+    table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 16px;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 14px;
+}
+
+td:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-approve, .btn-reject {
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-approve {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-approve:hover {
+  background-color: #218838;
+}
+
+.btn-reject {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-reject:hover {
+  background-color: #c82333;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="index.html"><img src="images/logo.png" width="80" height="30" alt="FitTrack" /></a>
+          </div>
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+              <li><a class="page-scroll" href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="main app form" id="main">
+      <div class="hero-section">
+        <div class="container nopadding">
+          <div class="col-md-12">
+            <div class="hero-content text-center">
+              <h1 class="wow fadeInUp" data-wow-delay="0.1s">Validar Empresas</h1>
+              <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Aprovar ou rejeitar empresas cadastradas.</p>
+              <table id="companiesTable">
+                <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>CNPJ</th>
+                      <th>Descrição</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="5">Carregando empresas...</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div id="reset-error" class="text-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" id="contato">
+      <div class="container">
+        <div class="col-md-6 contact">
+          <h1>Sobre Nós</h1>
+          <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz. Nosso objetivo é promover hábitos saudáveis com tecnologia!</p>
+        </div>
+        <div class="col-md-3 contact footer-menu"></div>
+        <div class="col-md-3 contact">
+          <h1>Contate-nos</h1>
+          <p>Entre em contato com nosso suporte ao cliente para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar!</p>
+          <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <a id="back-top" class="back-to-top page-scroll" href="#main"> <i class="ion-ios-arrow-thin-up"></i> </a>
+  </div>
+
+    <!-- Jquery e Js Plugins -->
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+  <script>
+fetch('php/validate_companies.php')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erro ao carregar empresas.');
+    }
+    return response.json();
+  })
+  .then(data => {
+    const tableBody = document.querySelector('#companiesTable tbody');
+    tableBody.innerHTML = '';
+
+    if (data.length === 0) {
+      tableBody.innerHTML = '<tr><td colspan="5">Nenhuma empresa pendente para validação.</td></tr>';
+      return;
+    }
+
+    data.forEach(company => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${company.user_name}</td>
+        <td>${company.email}</td>
+        <td>${company.cnpj}</td>
+        <td>${company.description || 'Descrição não disponível'}</td>
+        <td>
+          <button class="btn-approve" onclick="validateCompany(${company.user_ID}, 'approve')">Aprovar</button>
+          <button class="btn-reject" onclick="validateCompany(${company.user_ID}, 'reject')">Rejeitar</button>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  })
+  .catch(error => {
+    const tableBody = document.querySelector('#companiesTable tbody');
+    tableBody.innerHTML = `<tr><td colspan="5">Erro ao carregar empresas: ${error.message}</td></tr>`;
+  });
+  function validateCompany(userID, action) {
+  fetch('php/validate_company_action.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `id=${userID}&action=${action}`
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert(data.message); // Exibe mensagem de sucesso
+        // Remove a linha da tabela correspondente
+        const row = document.querySelector(`button[onclick="validateCompany(${userID}, '${action}')"]`).parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      } else {
+        alert(data.message || "Erro ao processar a ação.");
+      }
+    })
+    .catch(error => {
+      alert('Erro ao processar a ação: ' + error.message);
+    });
+}
+
+  </script>
+</body>
+
+</html>

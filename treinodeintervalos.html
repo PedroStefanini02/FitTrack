@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Treinos de Intervalo</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Treinos de Intervalo - FitTrack">
+    <meta name="keywords" content="HIIT, treinos de intervalo, fitness, saúde, exercícios">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .exercise-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .exercise-row .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .pitch-content,
+        .video {
+            width: 100%;
+        }
+
+        .pitch-content {
+            margin-bottom: 15px;
+        }
+
+        body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    .pitch-content p {
+      color: rgb(0, 204, 255) !important;
+
+    }
+    .pitch-intro p {
+    color: #ffffff !important; 
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+
+
+
+    a[href="mailto:suportefitrack@gmail.com"] {
+      color: rgb(0, 204, 255) !important;
+    }
+    .highlighted-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: rgb(0, 204, 255) !important;
+            padding: 10px;
+            border-radius: 5px;
+            /* Bordas arredondadas */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                            aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">TREINOS DE INTERVALO</h1>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Melhore sua capacidade cardiovascular e queime calorias com treinos HIIT</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pitch text-center" id="treinamento">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">TREINOS DE INTERVALO</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Treinamentos de intervalo de alta intensidade (HIIT) são uma forma eficiente de melhorar a capacidade cardiovascular e queimar calorias. Inclui exercícios que alternam entre períodos de esforço intenso e períodos de descanso ativo.</p>
+                </div>
+
+                <div class="row exercise-row">
+                    <!-- Exercício 1: Sprint -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>SPRINT</h1>
+                            <p><strong>Passos:</strong><br>1. Corra o mais rápido que puder por 30 segundos.<br>2. Descanse ou caminhe por 90 segundos.<br>3. Repita por 8-10 rodadas.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Exercício 2: Burpees -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>BURPEES</h1>
+                            <p><strong>Passos:</strong><br>1. Faça burpees continuamente por 20 segundos.<br>2. Descanse por 10 segundos.<br>3. Repita por 8 rodadas.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Exercício 3: Saltos de Caixa -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>SALTOS DE CAIXA</h1>
+                            <p><strong>Passos:</strong><br>1. Pule para cima de uma caixa com ambos os pés e desça suavemente.<br>2. Realize saltos contínuos por 30 segundos.<br>3. Descanse por 30 segundos.<br>4. Repita por 10 rodadas.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Exercício 4: High Knees -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>HIGH KNEES</h1>
+                            <p><strong>Passos:</strong><br>1. Corra no lugar levantando os joelhos o mais alto possível.<br>2. Mantenha a intensidade alta por 30 segundos.<br>3. Descanse por 30 segundos.<br>4. Repita por 10 rodadas.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Exercício 5: Jumping Jacks -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>JUMPING JACKS</h1>
+                            <p><strong>Passos:</strong><br>1. Realize jumping jacks por 30 segundos.<br>2. Descanse por 30 segundos.<br>3. Repita por 10 rodadas.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

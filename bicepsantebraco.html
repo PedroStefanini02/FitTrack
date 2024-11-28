@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Exercícios de Bíceps e Antebraço</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exercícios de Bíceps e Antebraço - FitTrack">
+    <meta name="keywords" content="exercícios bíceps, exercícios antebraço, fitness, saúde, musculação">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+.exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Garante espaçamento entre os itens */
+}
+
+.exercise-row .col-md-6 {
+    flex: 0 0 48%; /* Define dois itens por linha */
+    max-width: 48%;
+    margin-bottom: 30px;
+}
+
+.exercise-row .col-md-12 {
+    flex: 0 0 48%; /* Define o item solitário na última linha */
+    max-width: 48%;
+    margin-top: 20px;
+}
+
+.pitch-content {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.pitch-content:hover {
+    transform: translateY(-10px);
+}
+
+.pitch-content h1 {
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.pitch-content p {
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.pitch-intro p {
+    color: #ffffff !important;
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+
+.video-credit {
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">EXERCÍCIOS DE BÍCEPS E ANTEBRAÇO</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Fortaleça e defina seus bíceps e antebraços com estes exercícios</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pitch text-center" id="treinamento">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS DE BÍCEPS</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus bíceps.</p>
+                </div>
+        
+                <div class="row exercise-row">
+                    <!-- Exercício 1 - Rosca com Barra -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca com Barra</h1>
+                            <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros e segure a barra com as palmas das mãos viradas para cima.<br>2. Mantendo os cotovelos próximos ao corpo, curve os braços levantando a barra em direção ao peito.<br>3. Pause brevemente e depois abaixe a barra de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca na barra ‐ Feito com o Clipchamp.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Exercício 2 - Rosca com Halter -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca com Halter</h1>
+                            <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros e segure um haltere em cada mão, com as palmas das mãos viradas para cima.<br>2. Mantendo os cotovelos próximos ao corpo, curve os braços levantando os halteres em direção aos ombros.<br>3. Pause brevemente e depois abaixe os halteres de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca com halter.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Exercício 3 - Rosca Martelo -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca Martelo</h1>
+                            <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros e segure um haltere em cada mão, com as palmas das mãos viradas para dentro (uma em direção à outra).<br>2. Mantendo os cotovelos próximos ao corpo, curve os braços levantando os halteres em direção aos ombros.<br>3. Pause brevemente e depois abaixe os halteres de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca Martelo.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Exercício 4 - Rosca Concentrada -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca Concentrada</h1>
+                            <p><strong>Passos:</strong><br>1. Sente-se em um banco com as pernas afastadas e segure um haltere com uma mão, apoiando o cotovelo na parte interna da coxa.<br>2. Mantendo o braço fixo contra a coxa, curve o haltere em direção ao ombro levando apenas o antebraço em movimento.<br>3. Pause brevemente e depois abaixe o haltere de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca Concentrada.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Exercício 5 - Rosca Martelo Inclinado -->
+                    <div class="col-md-12 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca Martelo Inclinado</h1>
+                            <p><strong>Passos:</strong><br>1. Sente-se em um banco inclinado com um haltere em cada mão, com as palmas das mãos viradas uma para a outra.<br>2. Mantendo os cotovelos próximos ao corpo, curve os braços levantando os halteres em direção aos ombros.<br>3. Pause brevemente e depois abaixe os halteres de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Martelo inclinado.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="pitch-intro" id="exercicios-antebraco">
+                    <br><br><br>
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS PARA O ANTEBRAÇO</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus antebraços.</p>
+                </div>
+        
+                <div class="row exercise-row">
+                    <!-- Exercício 1 - Rosca Inversa -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca Inversa</h1>
+                            <p><strong>Passos:</strong><br>1. Fique em pé com os pés na largura dos ombros e segure uma barra com as palmas das mãos viradas para baixo, afastadas na largura dos ombros.<br>2. Levante a barra flexionando os cotovelos até que os antebraços estejam completamente contraídos.<br>3. Pause brevemente e depois abaixe a barra de volta à posição inicial.</p>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca Inversa.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Exercício 2 - Levantamento de Punho -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Levantamento de Punho</h1>
+                            <p><strong>Passos:</strong><br>1. Sente-se em uma cadeira com os antebraços apoiados nas coxas, com as mãos para fora.<br>2. Segure um haltere em cada mão, com as palmas viradas para cima.<br>3. Levante os halteres flexionando os punhos em direção aos antebraços.<br>4. Abaixe os halteres de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Levantamento de Punho.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    </div>
+        
+                    
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rosca Punho</h1>
+                            <p><strong>Passos:</strong><br>1. Fique em pé e segure uma barra atrás do corpo com uma pegada pronada (palmas voltadas para trás).<br>2. Mantenha os braços estendidos atrás das costas e as mãos alinhadas com os ombros.<br>3. Flexione os punhos para cima, elevando a barra o máximo que conseguir.<br>4. Retorne os punhos à posição inicial lentamente, controlando o movimento.<br>5. Repita o exercício pelo número desejado de repetições.</p>
+                    </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rosca punho.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    
+                    </div>
+                    <!-- Exercício4 - Rotação de Punho -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Rotação de Punho</h1>
+                            <p><strong>Passos:</strong><br>1. Segure um bastão, barra ou um haltere longo com uma das mãos, deixando-o levemente inclinado para baixo.<br>2. Mantenha o braço estável e o punho livre para realizar o movimento.<br>3. Gire o punho lentamente para mover o peso em um arco controlado, de um lado para o outro.<br>4. Controle o movimento enquanto retorna o peso à posição inicial.<br>5. Repita pelo número desejado de repetições e troque para a outra mão.</p>
+
+                    </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Biceps/Rotação de punho.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <!-- <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

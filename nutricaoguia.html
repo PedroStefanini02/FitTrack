@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Nutrição Esportiva</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nutrição Esportiva - FitTrack">
+    <meta name="keywords" content="nutrição esportiva, receitas, saúde, fitness">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .navbar-default .navbar-nav > li > a,
+        .navbar-brand {
+            color: #fff;
+        }
+        .section-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .section-subtitle {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .section-description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        .nutrient-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .nutrient-card:hover {
+            transform: translateY(-10px);
+        }
+        .nutrient-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .nutrient-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #E53935;
+            margin-bottom: 10px;
+        }
+        .hydration-tip {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #fundamentos {
+            background-color: #2c2f33;
+            padding: 50px 0;
+        }
+         h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+
+.pitch-intro p {
+    color: #ffffff !important; 
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+ul.wow.fadeInUp li {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.photo-credit {
+    font-size: 0.85em; /* Tamanho menor para o texto */
+    color: #6c757d; /* Cor mais discreta */
+    margin-top: 10px; /* Espaço acima do crédito */
+    text-align: center; /* Centralizar o texto */
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#receitas">Receitas</a></li>
+                            <li><a class="page-scroll" href="#fundamentos">Fundamentos</a></li>
+                            <li><a class="page-scroll" href="#pre-treino">Pré-treino</a></li>
+                            <li><a class="page-scroll" href="#pos-treino">Pós-treino</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Fim Navbar -->
+
+        <!-- Seção principal -->
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">FUNDAMENTOS DA NUTRIÇÃO ESPORTIVA</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">A nutrição adequada pode fazer uma grande diferença no desempenho esportivo. Aqui estão algumas dicas e informações importantes sobre como você pode melhorar seu desempenho através da alimentação.</p>
+                            <a href="#receitas" class="btn btn-action wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Seção principal -->
+
+        <!-- Seção de Receitas -->
+        <div class="pitch text-center" id="receitas">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1 class="section-title wow fadeInDown" data-wow-delay="0.2s">RECEITAS NUTRITIVAS</h1>
+                    <p class="section-description wow fadeInDown" data-wow-delay="0.3s">Explore uma série de receitas com exemplos e instruções passo a passo para preparar refeições saudáveis e nutritivas.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.4s">
+                        <img src="images/Nutricao/smoothie.webp" alt="Smoothie de Frutas" class="img-fluid nutrient-image">
+                        <h3 class="nutrient-title">Smoothie de Frutas</h3>
+                        <p>Delicioso smoothie feito com frutas frescas ou congeladas, perfeito para um café da manhã saudável.</p>
+                        <p><strong>Ingredientes:</strong> Morango, banana, iogurte natural, mel.</p>
+                        <p class="photo-credit">Foto de Lisa Fotios: <a href="https://www.pexels.com/pt-br/foto/copo-de-bebida-transparente-com-morango-845552/" target="_blank" rel="noopener noreferrer">Pexels</a></p>
+                    </div>
+                    <!-- Exemplo de Receita 2 -->
+                    <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.5s">
+                        <img src="images/Nutricao/saladaquenoa.jpg" alt="Salada de Quinoa" class="img-fluid nutrient-image">
+                        <h3 class="nutrient-title">Salada de Quinoa</h3>
+                        <p>Uma salada nutritiva e refrescante, rica em proteínas e fibras.</p>
+                        <p><strong>Ingredientes:</strong> Quinoa, tomate-cereja, pepino, limão, hortelã.</p>
+                        <p class="photo-credit">Foto de Nadin Sh: <a href="https://www.pexels.com/pt-br/foto/comida-alimento-refeicao-mulher-18535642/" target="_blank" rel="noopener noreferrer">Pexels</a></p>
+                    </div>
+                    <!-- Exemplo de Receita 3 -->
+                    <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.6s">
+                        <img src="images/Nutricao/omelete.jpg" alt="Omelete de Vegetais" class="img-fluid nutrient-image">
+                        <h3 class="nutrient-title">Omelete de Vegetais</h3>
+                        <p>Omelete leve e saudável, cheio de sabor e nutrientes.</p>
+                        <p><strong>Ingredientes:</strong> Ovos, espinafre, tomate, cebola, queijo feta.</p>
+                        <p class="photo-credit">Foto de Lloyd Mitchel Guanzon: <a href="https://www.pexels.com/pt-br/foto/ovo-queijo-foodporn-fotografia-de-alimentos-12310569/" target="_blank" rel="noopener noreferrer">Pexels</a></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Fim Seção de Receitas -->
+
+        <!-- Seção de Fundamentos da Nutrição Esportiva -->
+        <div class="pitch text-center" id="fundamentos">
+            <div class="container">
+                <h1 class="section-title wow fadeInDown" data-wow-delay="0.2s">Fundamentos da Nutrição Esportiva</h1>
+                <p class="section-description wow fadeInDown" data-wow-delay="0.3s">
+                    Aprenda como macronutrientes, micronutrientes e hidratação desempenham um papel crucial na sua performance esportiva.
+                </p>
+
+                <!-- Seção de Macronutrientes -->
+                <div class="section-content" id="macronutrientes">
+                    <h2 class="section-subtitle wow fadeInDown" data-wow-delay="0.2s">Macronutrientes</h2>
+                    <p class="wow fadeInDown" data-wow-delay="0.3s">
+                        Macronutrientes são essenciais para fornecer energia e ajudar na recuperação muscular.
+                    </p>
+                    <div class="row">
+                        <!-- Gorduras -->
+                        <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="images/Nutricao/gorduras.webp" alt="Gorduras" class="img-fluid nutrient-image">
+                            <h3 class="nutrient-title">Gorduras</h3>
+                            <p>Fonte de energia de longa duração, ajudam na absorção de vitaminas e na produção de hormônios.</p>
+                            <p><strong>Exemplos:</strong> Abacate, nozes, sementes, azeite de oliva, óleo de coco.</p>
+                            <p class="photo-credit">Imagem gerada por inteligência artificial usando a ferramenta DALL-E da OpenAI.</p>
+                        </div>
+                        <!-- Carboidratos -->
+                        <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.5s">
+                            <img src="images/Nutricao/carboidratos.webp" alt="Carboidratos" class="img-fluid nutrient-image">
+                            <h3 class="nutrient-title">Carboidratos</h3>
+                            <p>Principal fonte de energia para exercícios, reabastecem os estoques de glicogênio nos músculos.</p>
+                            <p><strong>Exemplos:</strong> Arroz, massas, pão integral, batata-doce, aveia, frutas.</p>
+                            <p class="photo-credit">Imagem gerada por inteligência artificial usando a ferramenta DALL-E da OpenAI.</p>
+                        </div>
+                        <!-- Proteínas -->
+                        <div class="col-md-4 nutrient-card wow fadeInUp" data-wow-delay="0.6s">
+                            <img src="images/Nutricao/proteinas.webp" alt="Proteínas" class="img-fluid nutrient-image">
+                            <h3 class="nutrient-title">Proteínas</h3>
+                            <p>Essenciais para a recuperação e crescimento muscular, reparam os tecidos após o exercício.</p>
+                            <p><strong>Exemplos:</strong> Carnes magras, peixe, ovos, feijão, lentilha, tofu, iogurte grego.</p>
+                            <p class="photo-credit">Imagem gerada por inteligência artificial usando a ferramenta DALL-E da OpenAI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de Micronutrientes -->
+                <div class="section-content" id="micronutrientes">
+                    <h2 class="section-subtitle wow fadeInDown" data-wow-delay="0.2s">Micronutrientes</h2>
+                    <p class="wow fadeInDown" data-wow-delay="0.3s">
+                        Vitaminas e minerais são fundamentais para funções corporais como imunidade e contração muscular.
+                    </p>
+                    <div class="row">
+                        <!-- Vitaminas -->
+                        <div class="col-md-6 nutrient-card wow fadeInUp" data-wow-delay="0.4s">
+                            <img src="images/Nutricao/vitaminas.webp" alt="Vitaminas" class="img-fluid nutrient-image">
+                            <h3 class="nutrient-title">Vitaminas</h3>
+                            <p>Vitaminas como A, C, D e E são cruciais para a saúde geral e a recuperação.</p>
+                            <p><strong>Exemplos:</strong> Cenoura, laranja, espinafre, amêndoas.</p>
+                            <p class="photo-credit">Imagem gerada por inteligência artificial usando a ferramenta DALL-E da OpenAI.</p>
+                        </div>
+                        <!-- Minerais -->
+                        <div class="col-md-6 nutrient-card wow fadeInUp" data-wow-delay="0.5s">
+                            <img src="images/Nutricao/minerais.webp" alt="Minerais" class="img-fluid nutrient-image">
+                            <h3 class="nutrient-title">Minerais</h3>
+                            <p>Essenciais para funções como transporte de oxigênio e saúde óssea.</p>
+                            <p><strong>Exemplos:</strong> Leite, carne vermelha, frutos do mar, castanhas.</p>
+                            <p class="photo-credit">Imagem gerada por inteligência artificial usando a ferramenta DALL-E da OpenAI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de Hidratação -->
+                <div class="section-content" id="hidratacao">
+                    <h2 class="section-subtitle wow fadeInDown" data-wow-delay="0.2s">Hidratação</h2>
+                    <p class="wow fadeInDown" data-wow-delay="0.3s">
+                        Manter-se hidratado é crucial para a performance. Saiba como e quando se hidratar corretamente.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4 hydration-tip wow fadeInUp" data-wow-delay="0.4s">
+                            <h3>Antes do Exercício</h3>
+                            <p>Beba 500ml de água cerca de 2 horas antes do exercício.</p>
+                        </div>
+                        <div class="col-md-4 hydration-tip wow fadeInUp" data-wow-delay="0.5s">
+                            <h3>Durante o Exercício</h3>
+                            <p>Beba pequenos goles de água a cada 15-20 minutos.</p>
+                        </div>
+                        <div class="col-md-4 hydration-tip wow fadeInUp" data-wow-delay="0.6s">
+                            <h3>Após o Exercício</h3>
+                            <p>Reidrate-se e, se necessário, use bebidas isotônicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Seção de Fundamentos da Nutrição Esportiva -->
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu"></div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

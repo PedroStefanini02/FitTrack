@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Avaliação Pessoal Fitness</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FitTrack - Avaliação Pessoal Fitness">
+    <meta name="keywords" content="Fitness, Avaliação Pessoal, Treinamento Personalizado">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-text {
+            color: white;
+        }
+
+        .progresso-item p {
+            color: white;
+        }
+
+        .treino-item p {
+            color: black;
+        }
+
+        .treino-dia {
+            margin-bottom: 10px;
+        }
+
+        .treino-dia h4 {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            margin-top: 0;
+        }
+
+        .treino-grupo {
+            margin-left: 10px;
+        }
+
+        .treino-grupo h5 {
+            margin: 5px 0;
+        }
+
+        .treino-exercicio {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .treino-exercicio p {
+            margin: 2px 0;
+        }
+
+        .supervisao-item p {
+            margin: 2px 0;
+        }
+
+        .supervisao-item {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        .treino-exercicio button,
+        .supervisao-item button,
+        .progresso-item button {
+            margin-left: 10px;
+        }
+
+        a[href="mailto:suportefitrack@gmail.com"] {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        .highlighted-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: rgb(0, 204, 255) !important;
+            padding: 10px;
+            border-radius: 5px;
+            /* Bordas arredondadas */
+        }
+
+        .form-text {
+            color: rgb(0, 204, 255);
+        }
+
+        .progresso-item p {
+            color: rgb(0, 204, 255);
+        }
+
+        h1,
+        h2,
+        h3,
+        .pitch-content p {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        h1,
+        h2,
+        .pitch-content p {
+            color: rgb(0, 204, 255) !important;
+
+        }
+
+        h3,
+        .pitch-content p {
+            color: rgb(4, 121, 255) !important;
+        }
+
+        a[href="mailto:suportefitrack@gmail.com"] {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        .pitch-intro p {
+            color: #ffffff !important;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer p {
+
+            font-size: 13px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.3;
+            margin: 10px 0 30px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+
+        ul.wow.fadeInUp li {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        .form-text {
+            color: rgb(0, 204, 255);
+        }
+
+        .progresso-item p {
+            color: rgb(0, 204, 255);
+        }
+
+        /* Estilo para manter o gráfico em alta definição e ocupar quase a tela toda */
+        .grafico-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            /* Espaço acima do gráfico */
+        }
+
+        .grafico-wrapper {
+            width: 100%;
+            height: 80vh;
+            /* 80% da altura da tela */
+            max-width: 1200px;
+            /* Limita a largura máxima em telas muito grandes */
+        }
+
+        #graficoProgresso {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .grafico-wrapper {
+                height: 60vh;
+                /* Ajusta a altura para 60% da tela no celular */
+            }
+        }
+
+        .highlighted-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: rgb(0, 204, 255) !important;
+            padding: 10px;
+            border-radius: 5px;
+            /* Bordas arredondadas */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#programa-evolucao">Programa de Evolução</a></li>
+                            <li><a class="page-scroll" href="#treinador-pessoal">Trabalhe com um Treinador Pessoal</a>
+                            </li>
+                            <li><a class="page-scroll" href="#supervisao-monitoramento">Supervisão e Monitoramento</a>
+                            </li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="nova-hero-treinamentoPessoal">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">AVALIAÇÃO PESSOAL FITNESS</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Entenda suas necessidades e
+                                metas de saúde com nosso programa de avaliação personalizado.</p>
+                            <a href="#programa-evolucao" id="botao-comecar" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pitch text-center" id="programa-evolucao">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">Programa de Evolução Fitness</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Acompanhe seu progresso e veja sua evolução ao longo
+                        do tempo.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Registre seu progresso</h3>
+                        <form id="progresso-form">
+                            <div class="form-group">
+                                <label for="data" style="color: white;">Data:</label>
+                                <input type="date" class="form-control" id="data" name="data" required>
+                                <small class="form-text">Escolha a data em que está fazendo a medição.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="peso" style="color: white;">Peso (kg):</label>
+                                <input type="number" class="form-control" id="peso" name="peso" required>
+                                <small class="form-text">Insira seu peso atual em quilogramas.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="percentual-gordura" style="color: white;">Percentual de Gordura (%):</label>
+                                <input type="number" class="form-control" id="percentual-gordura"
+                                    name="percentualGordura">
+                                <small class="form-text">Informe seu percentual de gordura corporal.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="musculatura" style="color: white;">Massa Muscular (kg):</label>
+                                <input type="number" class="form-control" id="musculatura" name="musculatura">
+                                <small class="form-text">Digite sua massa muscular em quilogramas.</small>
+                            </div>
+                            <input type="hidden" id="user_id_progresso" name="user_id_progresso" value="">
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="color: white;">Seu Progresso</h3>
+                        <div id="progresso-lista"></div>
+                    </div>
+                    <div class="col-md-12 grafico-container">
+                        <div class="grafico-wrapper">
+                            <canvas id="graficoProgresso"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="save-progress" class="btn btn-success">Salvar Progresso</button>
+                        <div id="progress-save-confirmation" class="alert alert-success"
+                            style="display:none; margin-top: 10px;">Progresso salvo com sucesso!</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            // Inicializa os dados do gráfico
+            let progressoData = {
+                labels: [], // Datas
+                datasets: [
+                    {
+                        label: 'Peso (kg)',
+                        data: [], // Pesos
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true,
+                    },
+                    {
+                        label: 'Percentual de Gordura (%)',
+                        data: [], // Percentual de Gordura
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                    },
+                    {
+                        label: 'Massa Muscular (kg)',
+                        data: [], // Massa Muscular
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                    }
+                ]
+            };
+
+            // Configuração do gráfico
+            let progressoConfig = {
+                type: 'line',
+                data: progressoData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#FFFFFF' // Cor do texto da legenda para branco
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Progresso ao Longo do Tempo',
+                            color: '#FFFFFF' // Cor do título para branco
+                        },
+                        tooltip: {
+                            titleColor: '#FFFFFF',  // Cor do título do tooltip para branco
+                            bodyColor: '#FFFFFF',   // Cor do corpo do tooltip para branco
+                            footerColor: '#FFFFFF'  // Cor do rodapé do tooltip para branco (se aplicável)
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Data',
+                                color: '#FFFFFF' // Cor do texto do eixo X
+                            },
+                            ticks: {
+                                color: '#FFFFFF' // Cor dos rótulos do eixo X
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Valores',
+                                color: '#FFFFFF' // Cor do texto do eixo Y
+                            },
+                            ticks: {
+                                color: '#FFFFFF' // Cor dos rótulos do eixo Y
+                            }
+                        }
+                    }
+                }
+            };
+
+            // Cria o gráfico
+            let graficoProgresso = new Chart(
+                document.getElementById('graficoProgresso'),
+                progressoConfig
+            );
+
+            // Função para atualizar o gráfico com novos dados
+            function atualizarGrafico(data, peso, percentualGordura, musculatura) {
+                progressoData.labels.push(data);
+                progressoData.datasets[0].data.push(peso);
+                progressoData.datasets[1].data.push(percentualGordura);
+                progressoData.datasets[2].data.push(musculatura);
+                graficoProgresso.update();
+            }
+
+
+        </script>
+
+        <div class="app-features text-center" id="treinador-pessoal">
+            <div class="container">
+                <h1 class="wow fadeInDown" data-wow-delay="0.1s">Plano de Exercícios</h1>
+                <p class="wow fadeInDown" data-wow-delay="0.2s">Crie um plano de exercícios personalizado.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Crie sua Ficha de Treinos</h3>
+                        <form id="treino-form">
+                            <div class="form-group">
+                                <label for="dia" style="color: black;">Dia da Semana:</label>
+                                <select class="form-control" id="dia" name="dia" required>
+                                    <option value="Segunda-feira">Segunda-feira</option>
+                                    <option value="Terça-feira">Terça-feira</option>
+                                    <option value="Quarta-feira">Quarta-feira</option>
+                                    <option value="Quinta-feira">Quinta-feira</option>
+                                    <option value="Sexta-feira">Sexta-feira</option>
+                                    <option value="Sábado">Sábado</option>
+                                    <option value="Domingo">Domingo</option>
+                                </select>
+                                <small class="form-text" style="color: black;">Escolha o dia da semana.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="musculo" style="color: black;">Grupo Muscular:</label>
+                                <select class="form-control" id="musculo" name="musculo" required>
+                                    <option value="Pernas">Pernas</option>
+                                    <option value="Braços">Braços</option>
+                                    <option value="Peito">Peito</option>
+                                    <option value="Costas">Costas</option>
+                                    <option value="Ombros">Ombros</option>
+                                    <option value="Abdômen">Abdômen</option>
+                                </select>
+                                <small class="form-text" style="color: black;">Escolha o grupo muscular.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exercicio" style="color: black;">Exercício:</label>
+                                <select class="form-control" id="exercicio" name="exercicio" required>
+                                    <!-- Os exercícios serão preenchidos dinamicamente -->
+                                </select>
+                                <small class="form-text" style="color: black;">Escolha um exercício.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="series" style="color: black;">Séries:</label>
+                                <input type="number" class="form-control" id="series" name="series" required>
+                                <small class="form-text" style="color: black;">Digite o número de séries.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="repeticoes" style="color: black;">Repetições:</label>
+                                <input type="number" class="form-control" id="repeticoes" name="repeticoes" required>
+                                <small class="form-text" style="color: black;">Digite o número de repetições por
+                                    série.</small>
+                            </div>
+                            <input type="hidden" id="user_id_treino" name="user_id_treino" value="">
+                            <button type="submit" class="btn btn-primary">Adicionar Exercício</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="color: black;">Sua Ficha de Treinos</h3>
+                        <div id="treino-lista"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="save-workout" class="btn btn-success">Salvar Plano de Treino</button>
+                        <div id="workout-save-confirmation" class="alert alert-success"
+                            style="display:none; margin-top: 10px;">Plano de treino salvo com sucesso!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-features text-center" id="supervisao-monitoramento">
+            <div class="container">
+                <h1 class="wow fadeInDown" data-wow-delay="0.1s">Supervisão e Monitoramento</h1>
+                <p class="wow fadeInDown" data-wow-delay="0.2s">Receba orientação contínua durante os treinos para
+                    garantir que você esteja executando os exercícios corretamente e progredindo de forma segura.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Registre sua Supervisão</h3>
+                        <form id="supervisao-form">
+                            <div class="form-group">
+                                <label for="data-supervisao" style="color: black;">Data:</label>
+                                <input type="date" class="form-control" id="data-supervisao" name="data-supervisao"
+                                    required>
+                                <small class="form-text" style="color: black;">Escolha a data da supervisão.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="observacoes" style="color: black;">Observações:</label>
+                                <textarea class="form-control" id="observacoes" name="observacoes" rows="3"
+                                    required></textarea>
+                                <small class="form-text" style="color: black;">Adicione observações sobre a supervisão
+                                    recebida.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="supervisor" style="color: black;">Supervisor:</label>
+                                <input type="text" class="form-control" id="supervisor" name="supervisor" required>
+                                <small class="form-text" style="color: black;">Nome do supervisor que acompanhou o
+                                    treino.</small>
+                            </div>
+                            <input type="hidden" id="user_id_supervisao" name="user_id_supervisao" value="">
+                            <button type="submit" class="btn btn-primary">Registrar Supervisão</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="color: black;">Suas Supervisões</h3>
+                        <div id="supervisao-lista"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="save-supervision" class="btn btn-success">Salvar Supervisão</button>
+                        <div id="supervision-save-confirmation" class="alert alert-success"
+                            style="display:none; margin-top: 10px;">Supervisão salva com sucesso!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" id="contact">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno
+                        Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem
+                        inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar
+                        dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência! </p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+    <script>
+        const exerciciosPorGrupo = {
+            "Pernas": ["Agachamento", "Leg Press", "Extensão de Pernas", "Flexão de Pernas", "Levantamento Terra"],
+            "Braços": ["Rosca Direta", "Rosca Martelo", "Tríceps Corda", "Tríceps Testa", "Rosca Concentrada"],
+            "Peito": ["Supino Reto", "Supino Inclinado", "Crucifixo", "Pullover", "Peck Deck"],
+            "Costas": ["Puxada Frontal", "Remada Curvada", "Levantamento Terra", "Remada Baixa", "Barra Fixa"],
+            "Ombros": ["Desenvolvimento", "Elevação Lateral", "Elevação Frontal", "Desenvolvimento Arnold", "Encolhimento"],
+            "Abdômen": ["Abdominal", "Prancha", "Elevação de Pernas", "Abdominal na Bola", "Bicicleta no Chão"]
+        };
+
+        const progressoLista = document.getElementById('progresso-lista');
+        const treinoLista = document.getElementById('treino-lista');
+        const supervisaoLista = document.getElementById('supervisao-lista');
+
+        const ordemDiasSemana = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+
+        function getUserId() {
+            return document.getElementById('user_id_progresso').value || 1;
+        }
+
+        document.getElementById('musculo').addEventListener('change', function () {
+            const musculo = this.value;
+            const exercicioSelect = document.getElementById('exercicio');
+            exercicioSelect.innerHTML = '';
+
+            exerciciosPorGrupo[musculo].forEach(function (exercicio) {
+                const option = document.createElement('option');
+                option.value = exercicio;
+                option.textContent = exercicio;
+                exercicioSelect.appendChild(option);
+            });
+        });
+
+        function formatarData(data) {
+            const partes = data.split('-');
+            return `${partes[2]}/${partes[1]}/${partes[0]}`;
+        }
+
+        function reformatarData(data) {
+            const partes = data.split('-');
+            return `${partes[0]}-${partes[1]}-${partes[2]}`;
+        }
+
+        document.getElementById('progresso-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const data = document.getElementById('data').value;
+            const dataFormatada = reformatarData(data); // Reformatar a data para o formato AAAA-DD-MM
+            const peso = document.getElementById('peso').value;
+            const percentualGordura = document.getElementById('percentual-gordura').value || null;
+            const musculatura = document.getElementById('musculatura').value || null;
+            const userIdProgresso = getUserId();
+
+            const progressoItem = {
+                data: dataFormatada,
+                peso: peso,
+                percentualGordura: percentualGordura,
+                musculatura: musculatura,
+                user_id: userIdProgresso
+            };
+
+            atualizarGrafico(data, peso, percentualGordura, musculatura);
+
+            $.ajax({
+                type: "POST",
+                url: "php/save_progress.php",
+                data: progressoItem,
+                success: function (response) {
+                    console.log(response); // Adiciona log para verificar a resposta do servidor
+                    if (response.includes("Progress saved successfully!")) {
+                        const progressoDiv = document.createElement('div');
+                        progressoDiv.className = 'progresso-item';
+                        progressoDiv.innerHTML = `<p><strong>Data:</strong> ${formatarData(progressoItem.data)}</p>
+                                                  <p><strong>Peso:</strong> ${progressoItem.peso} kg</p>
+                                                  <p><strong>Percentual de Gordura:</strong> ${progressoItem.percentualGordura ? progressoItem.percentualGordura + '%' : 'N/A'}</p>
+                                                  <p><strong>Massa Muscular:</strong> ${progressoItem.musculatura ? progressoItem.musculatura + ' kg' : 'N/A'}</p><button class="btn btn-danger btn-sm" data-id="${progressoItem.id}">Remover</button>`;
+                        progressoDiv.querySelector('button').addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            $.ajax({
+                                type: "POST",
+                                url: "php/delete_progress.php",
+                                data: { id: id },
+                                success: function (deleteResponse) {
+                                    progressoLista.removeChild(progressoDiv);
+                                },
+                                error: function (xhr, status, error) {
+                                    alert('Erro ao remover o progresso.');
+                                }
+                            });
+                        });
+                        progressoLista.appendChild(progressoDiv);
+                        document.getElementById('progresso-form').reset();
+                    } else {
+                        alert('Erro ao registrar o progresso: ' + response);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro ao registrar o progresso:', error);
+                    alert('Erro ao registrar o progresso.');
+                }
+            });
+        });
+
+        document.getElementById('save-progress').addEventListener('click', function () {
+            document.getElementById('progress-save-confirmation').style.display = 'block';
+            setTimeout(() => document.getElementById('progress-save-confirmation').style.display = 'none', 2000);
+        });
+
+        document.getElementById('treino-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const dia = document.getElementById('dia').value;
+            const musculo = document.getElementById('musculo').value;
+            const exercicio = document.getElementById('exercicio').value;
+            const series = document.getElementById('series').value;
+            const repeticoes = document.getElementById('repeticoes').value;
+            const userIdTreino = getUserId();
+
+            const treinoItem = {
+                dia: dia,
+                musculo: musculo,
+                exercicio: exercicio,
+                series: series,
+                repeticoes: repeticoes,
+                user_id: userIdTreino
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "php/save_workout.php",
+                data: treinoItem,
+                success: function (response) {
+                    let treinoDia = document.querySelector(`.treino-dia[data-dia="${treinoItem.dia}"]`);
+                    if (!treinoDia) {
+                        treinoDia = document.createElement('div');
+                        treinoDia.className = 'treino-dia';
+                        treinoDia.dataset.dia = treinoItem.dia;
+                        treinoDia.innerHTML = `<h4>${treinoItem.dia}</h4>`;
+                        treinoLista.appendChild(treinoDia);
+                    }
+
+                    let treinoGrupo = treinoDia.querySelector(`.treino-grupo[data-grupo="${treinoItem.musculo}"]`);
+                    if (!treinoGrupo) {
+                        treinoGrupo = document.createElement('div');
+                        treinoGrupo.className = 'treino-grupo';
+                        treinoGrupo.dataset.grupo = treinoItem.musculo;
+                        treinoGrupo.innerHTML = `<h5>${treinoItem.musculo}</h5>`;
+                        treinoDia.appendChild(treinoGrupo);
+                    }
+
+                    const treinoExercicio = document.createElement('div');
+                    treinoExercicio.className = 'treino-exercicio';
+                    treinoExercicio.innerHTML = `<p><strong>Exercício:</strong> ${treinoItem.exercicio} <strong>Séries:</strong> ${treinoItem.series} <strong>Repetições:</strong> ${treinoItem.repeticoes}</p><button class="btn btn-danger btn-sm" data-id="${treinoItem.id}">Remover</button>`;
+                    treinoGrupo.appendChild(treinoExercicio);
+
+                    treinoExercicio.querySelector('button').addEventListener('click', function () {
+                        const id = this.getAttribute('data-id');
+                        $.ajax({
+                            type: "POST",
+                            url: "php/delete_workout.php",
+                            data: { id: id },
+                            success: function (deleteResponse) {
+                                treinoGrupo.removeChild(treinoExercicio);
+                                if (treinoGrupo.children.length === 1) {
+                                    treinoDia.removeChild(treinoGrupo);
+                                }
+                                if (treinoDia.children.length === 1) {
+                                    treinoLista.removeChild(treinoDia);
+                                }
+                            },
+                            error: function (xhr, status, error) {
+                                alert('Erro ao remover o exercício.');
+                            }
+                        });
+                    });
+
+                    document.getElementById('treino-form').reset();
+                    document.getElementById('musculo').dispatchEvent(new Event('change'));
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro ao adicionar o exercício:', error);
+                    alert('Erro ao adicionar o exercício.');
+                }
+            });
+        });
+
+        document.getElementById('save-workout').addEventListener('click', function () {
+            document.getElementById('workout-save-confirmation').style.display = 'block';
+            setTimeout(() => document.getElementById('workout-save-confirmation').style.display = 'none', 2000);
+        });
+
+        document.getElementById('supervisao-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const data = document.getElementById('data-supervisao').value;
+            const dataFormatada = reformatarData(data); // Reformatar a data para o formato AAAA-DD-MM
+            const observacoes = document.getElementById('observacoes').value;
+            const supervisor = document.getElementById('supervisor').value;
+            const userIdSupervisao = getUserId();
+
+            const supervisaoItem = {
+                user_id: userIdSupervisao,
+                date: dataFormatada,
+                observations: observacoes,
+                supervisor: supervisor
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "php/save_supervision.php",
+                data: supervisaoItem,
+                success: function (response) {
+                    const supervisaoDiv = document.createElement('div');
+                    supervisaoDiv.className = 'supervisao-item';
+                    supervisaoDiv.innerHTML = `<p><strong>Data:</strong> ${formatarData(supervisaoItem.date)}</p>
+                                                <p><strong>Supervisor:</strong> ${supervisaoItem.supervisor}</p>
+                                                <p><strong>Observações:</strong> ${supervisaoItem.observations}</p><button class="btn btn-danger btn-sm" data-id="${supervisaoItem.id}">Remover</button>`;
+                    supervisaoLista.appendChild(supervisaoDiv);
+
+                    supervisaoDiv.querySelector('button').addEventListener('click', function () {
+                        const id = this.getAttribute('data-id');
+                        $.ajax({
+                            type: "POST",
+                            url: "php/delete_supervision.php",
+                            data: { id: id },
+                            success: function (deleteResponse) {
+                                supervisaoLista.removeChild(supervisaoDiv);
+                            },
+                            error: function (xhr, status, error) {
+                                alert('Erro ao remover a supervisão.');
+                            }
+                        });
+                    });
+
+                    document.getElementById('supervisao-form').reset();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro ao registrar a supervisão:', error);
+                    alert('Erro ao registrar a supervisão.');
+                }
+            });
+        });
+
+        document.getElementById('save-supervision').addEventListener('click', function () {
+            document.getElementById('supervision-save-confirmation').style.display = 'block';
+            setTimeout(() => document.getElementById('supervision-save-confirmation').style.display = 'none', 2000);
+        });
+
+        document.getElementById('botao-comecar').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.querySelector('#programa-evolucao').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Inicializa a lista de exercícios para o grupo muscular selecionado inicialmente
+        document.getElementById('musculo').dispatchEvent(new Event('change'));
+
+        document.addEventListener('DOMContentLoaded', function () {
+            $.ajax({
+                type: "POST",
+                url: "php/load_user_data.php",
+                dataType: "json",
+                success: function (response) {
+                    if (response.error) {
+                        console.error(response.error);
+                        return;
+                    }
+
+                    // Processar dados de progresso
+                    response.progress.forEach(function (progresso) {
+                        const progressoDiv = document.createElement('div');
+                        progressoDiv.className = 'progresso-item';
+                        progressoDiv.innerHTML = `<p><strong>Data:</strong> ${formatarData(progresso.date)}</p>
+                                                  <p><strong>Peso:</strong> ${progresso.weight} kg</p>
+                                                  <p><strong>Percentual de Gordura:</strong> ${progresso.body_fat ? progresso.body_fat + '%' : 'N/A'}</p>
+                                                  <p><strong>Massa Muscular:</strong> ${progresso.muscle_mass ? progresso.muscle_mass + ' kg' : 'N/A'}</p><button class="btn btn-danger btn-sm" data-id="${progresso.id}">Remover</button>`;
+                        progressoLista.appendChild(progressoDiv);
+                        atualizarGrafico(progresso.date, progresso.weight, progresso.body_fat, progresso.muscle_mass);
+                        progressoDiv.querySelector('button').addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            $.ajax({
+                                type: "POST",
+                                url: "php/delete_progress.php",
+                                data: { id: id },
+                                success: function (deleteResponse) {
+                                    progressoLista.removeChild(progressoDiv);
+                                },
+                                error: function (xhr, status, error) {
+                                    alert('Erro ao remover o progresso.');
+                                }
+                            });
+                        });
+                    });
+
+                    // Processar dados de treino
+                    response.workout.forEach(function (treino) {
+                        let treinoDia = document.querySelector(`.treino-dia[data-dia="${treino.day}"]`);
+                        if (!treinoDia) {
+                            treinoDia = document.createElement('div');
+                            treinoDia.className = 'treino-dia';
+                            treinoDia.dataset.dia = treino.day;
+                            treinoDia.innerHTML = `<h4>${treino.day}</h4>`;
+                            treinoLista.appendChild(treinoDia);
+                        }
+
+                        let treinoGrupo = treinoDia.querySelector(`.treino-grupo[data-grupo="${treino.muscle}"]`);
+                        if (!treinoGrupo) {
+                            treinoGrupo = document.createElement('div');
+                            treinoGrupo.className = 'treino-grupo';
+                            treinoGrupo.dataset.grupo = treino.muscle;
+                            treinoGrupo.innerHTML = `<h5>${treino.muscle}</h5>`;
+                            treinoDia.appendChild(treinoGrupo);
+                        }
+
+                        const treinoItem = document.createElement('div');
+                        treinoItem.className = 'treino-exercicio';
+                        treinoItem.innerHTML = `<p><strong>Exercício:</strong> ${treino.exercise} <strong>Séries:</strong> ${treino.sets} <strong>Repetições:</strong> ${treino.reps}</p><button class="btn btn-danger btn-sm" data-id="${treino.id}">Remover</button>`;
+                        treinoGrupo.appendChild(treinoItem);
+
+                        treinoItem.querySelector('button').addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            $.ajax({
+                                type: "POST",
+                                url: "php/delete_workout.php",
+                                data: { id: id },
+                                success: function (deleteResponse) {
+                                    treinoGrupo.removeChild(treinoItem);
+                                    if (treinoGrupo.children.length === 1) {
+                                        treinoDia.removeChild(treinoGrupo);
+                                    }
+                                    if (treinoDia.children.length === 1) {
+                                        treinoLista.removeChild(treinoDia);
+                                    }
+                                },
+                                error: function (xhr, status, error) {
+                                    alert('Erro ao remover o exercício.');
+                                }
+                            });
+                        });
+                    });
+
+                    // Processar dados de supervisão
+                    response.supervision.forEach(function (supervisao) {
+                        const supervisaoItem = document.createElement('div');
+                        supervisaoItem.className = 'supervisao-item';
+                        supervisaoItem.innerHTML = `<p><strong>Data:</strong> ${formatarData(supervisao.date)}</p>
+                                                    <p><strong>Supervisor:</strong> ${supervisao.supervisor}</p>
+                                                    <p><strong>Observações:</strong> ${supervisao.observations}</p><button class="btn btn-danger btn-sm" data-id="${supervisao.id}">Remover</button>`;
+                        supervisaoLista.appendChild(supervisaoItem);
+
+                        supervisaoItem.querySelector('button').addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            $.ajax({
+                                type: "POST",
+                                url: "php/delete_supervision.php",
+                                data: { id: id },
+                                success: function (deleteResponse) {
+                                    supervisaoLista.removeChild(supervisaoItem);
+                                },
+                                error: function (xhr, status, error) {
+                                    alert('Erro ao remover a supervisão.');
+                                }
+                            });
+                        });
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro ao carregar os dados do usuário:', error);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

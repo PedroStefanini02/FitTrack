@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Exercícios de Tríceps</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exercícios de Tríceps - FitTrack">
+    <meta name="keywords" content="exercícios tríceps, fitness, saúde, musculação">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .pitch-content,
+        .video {
+            margin-bottom: 30px;
+        }
+
+        .exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Garante espaçamento entre os itens */
+}
+
+.exercise-row .col-md-6 {
+    flex: 0 0 48%; /* Define dois itens por linha */
+    max-width: 48%;
+    margin-bottom: 30px;
+}
+
+.exercise-row .col-md-12 {
+    flex: 0 0 48%; /* Define o item solitário na última linha */
+    max-width: 48%;
+    margin-top: 20px;
+}
+
+.pitch-content {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.pitch-content:hover {
+    transform: translateY(-10px);
+}
+
+.pitch-content h1 {
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.pitch-content p {
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.pitch-intro p {
+    color: #ffffff !important; 
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+.video-credit {
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"
+                        aria-expanded="false">
+                        <span class="sr-only">Alternar navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="indexlogado.html">
+                        <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                        <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                        <li><a class="page-scroll" href="#contato">Contato</a></li>
+                        <li><a href="php/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Fim Navbar -->
+
+        <!-- Seção principal -->
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">EXERCÍCIOS DE TRÍCEPS E OMBRO</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Fortaleça e defina seus tríceps e ombros com
+                                estes
+                                exercícios</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de exercícios -->
+            <div class="pitch text-center" id="treinamento">
+                <div class="container">
+                    <div class="pitch-intro">
+                        <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS DE TRÍCEPS</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus tríceps.</p>
+                    </div>
+            
+                    <div class="row exercise-row">
+                        <!-- Exercício 1 - Tríceps Testa -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>TRÍCEPS TESTA</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco plano com um haltere na mão.<br>2. Estenda o braço em direção ao teto.<br>3. Dobre o cotovelo e abaixe o haltere em direção à testa.<br>4. Estenda o braço de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Triceps/Triceps Testa.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Exercício 2 - Tríceps Pulley -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>TRÍCEPS PULLEY</h1>
+                                <p><strong>Passos:</strong><br>1. Fique de frente para uma máquina de polia alta com uma barra em anexo.<br>2. Segure a barra com as mãos afastadas.<br>3. Estenda os braços para baixo até estarem completamente retos.<br>4. Dobre os cotovelos e retorne à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Triceps/TRÍCEPS PULLEY.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Exercício 3 - Tríceps Francês -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>TRÍCEPS FRANCÊS</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco plano com um haltere na mão.<br>2. Estenda o braço em direção ao teto.<br>3. Dobre o cotovelo e abaixe o haltere atrás da cabeça.<br>4. Estenda o braço de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Triceps/Frances.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Exercício 4 - Tríceps Coice -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>TRÍCEPS COICE</h1>
+                                <p><strong>Passos:</strong><br>
+                                    1. Fique de pé com a corda anexada à polia baixa.<br>
+                                    2. Incline o tronco ligeiramente à frente, mantendo as costas retas.<br>
+                                    3. Segure a corda com ambas as mãos e mantenha os cotovelos próximos ao corpo.<br>
+                                    4. Estenda os braços completamente para trás.<br>
+                                    5. Retorne lentamente à posição inicial e repita.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Triceps/Coice.mp4" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                                <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+                        
+            
+                        <!-- Exercício 5 - Tríceps na Polia -->
+                        <div class="col-md-12 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>TRÍCEPS CHIFRINHO</h1>
+                                <p><strong>Passos:</strong><br>
+                                    1. Fique de pé, de frente para a máquina de polia, com uma barra em formato de "chifre" presa à polia alta.<br>
+                                    2. Segure a barra com as palmas das mãos voltadas para baixo (pegada pronada) e mantenha os cotovelos próximos ao corpo.<br>
+                                    3. Puxe a barra para baixo, estendendo completamente os braços, contraindo os tríceps no final do movimento.<br>
+                                    4. Retorne lentamente à posição inicial, dobrando os cotovelos e controlando o peso.<br>
+                                    5. Mantenha o tronco estável e repita o movimento pelo número desejado de repetições.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Triceps/Chifrinho.mp4" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+
+                <!-- Nova Seção de Exercícios de Ombro -->
+                <div class="pitch text-center" id="exercicios-ombro">
+                    <div class="container">
+                        <div class="pitch-intro">
+                            <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS DE OMBRO</h1>
+                            <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus ombros.</p>
+                        </div>
+                
+                        <div class="row exercise-row">
+                            <!-- Exercício 1 - Elevação Lateral -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>ELEVAÇÃO LATERAL</h1>
+                                    <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros.<br>2. Segure um haltere em cada mão ao lado do corpo.<br>3. Levante os braços lateralmente até que estejam na altura dos ombros.<br>4. Abaixe os halteres de volta à posição inicial.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Triceps/Lateral.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+                
+                            <!-- Exercício 2 - Desenvolvimento com Halteres -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>DESENVOLVIMENTO COM HALTERES</h1>
+                                    <p><strong>Passos:</strong><br>1. Sente-se em um banco com encosto segurando um haltere em cada mão.<br>2. Levante os halteres na altura dos ombros com as palmas das mãos voltadas para frente.<br>3. Estenda os braços para cima até que os halteres se encontrem acima da cabeça.<br>4. Abaixe os halteres de volta à posição inicial.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Triceps/Desenvolvimento.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+                
+                            <!-- Exercício 3 - Remada Alta -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>REMADA ALTA</h1>
+                                    <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros.<br>2. Segure uma barra com as mãos na largura dos ombros.<br>3. Puxe a barra para cima, perto do corpo, até a altura do queixo.<br>4. Abaixe a barra de volta à posição inicial.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Triceps/REMADA ALTA.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+                
+                            <!-- Exercício 4 - Elevação Frontal -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>ELEVAÇÃO FRONTAL</h1>
+                                    <p><strong>Passos:</strong><br>1. Fique de pé com os pés na largura dos ombros.<br>2. Segure um haltere em cada mão à frente do corpo.<br>3. Levante os halteres para frente até que estejam na altura dos ombros.<br>4. Abaixe os halteres de volta à posição inicial.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Triceps/Elevação frontal.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <!-- <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+</body>
+
+</html>

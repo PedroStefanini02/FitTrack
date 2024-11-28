@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Exercícios de Posteriores de Coxa e Glúteos</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exercícios de Posteriores de Coxa e Glúteos - FitTrack">
+    <meta name="keywords" content="exercícios posteriores coxa, exercícios glúteos, fitness, saúde, musculação">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .exercise-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .exercise-row .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .pitch-content,
+        .video {
+            width: 100%;
+        }
+
+        .pitch-content {
+            margin-bottom: 15px;
+        }
+        .pitch-content, .video {
+            margin-bottom: 30px;
+        }
+
+        .pitch-content,
+        .video {
+            margin-bottom: 30px;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row-flex .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+        .exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.exercise-row .col-md-6 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-bottom: 30px;
+}
+
+.exercise-row .col-md-12 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-top: 20px;
+}
+
+.pitch-content {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.pitch-content:hover {
+    transform: translateY(-10px);
+}
+
+.pitch-content h1 {
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.pitch-content p {
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.pitch-intro p {
+    color: #ffffff !important; 
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.video-credit {
+            font-size: 12px;
+            color: rgb(0, 204, 255);
+            margin-top: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                            <li><a class="page-scroll" href="#contato">Contato</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">EXERCÍCIOS DE POSTERIORES DE COXA E GLÚTEOS</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Fortaleça e defina seus posteriores de coxa e glúteos com estes exercícios</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pitch text-center" id="treinamento">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS PARA POSTERIORES DE COXA</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus posteriores de coxa.</p>
+                </div>
+
+                <div class="row exercise-row">
+                    <!-- Exercício 1 - Agachamento -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Agachamento</h1>
+                            <p><strong>Passos:</strong><br>1. Fique em pé com os pés na largura dos ombros.<br>2. Agache, dobrando os joelhos e mantendo as costas retas.<br>3. Mantenha os joelhos alinhados com os pés.<br>4. Levante-se de volta à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Perna/Agachamento - Feito com o Clipchamp.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                        
+                    </div>
+
+                 
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Mesa Flexora</h1>
+                            <p><strong>Passos:</strong><br>
+                            1. Deite-se de barriga para baixo no equipamento de mesa flexora, posicionando as pernas sob os rolos acolchoados.<br>
+                            2. Ajuste o equipamento para que o rolo esteja logo acima do calcanhar, com os joelhos alinhados com o eixo da máquina.<br>
+                            3. Segure as alças laterais para maior estabilidade e mantenha o tronco imóvel durante o exercício.<br>
+                            4. Flexione os joelhos, levantando o peso até que os rolos quase toquem os glúteos.<br>
+                            5. Retorne lentamente à posição inicial, controlando o movimento.<br>
+                            6. Repita para o número desejado de repetições.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Perna/Mesa flexora.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Flexora em Pé</h1>
+                            <p><strong>Passos:</strong><br>
+                            1. Fique em pé na máquina de flexora em pé e ajuste o rolo acolchoado para que fique logo acima do calcanhar.<br>
+                            2. Posicione-se com o tronco apoiado no encosto e segure as alças laterais para maior estabilidade.<br>
+                            3. Mantenha a perna de apoio estendida e os joelhos alinhados.<br>
+                            4. Flexione o joelho da perna trabalhada, levantando o peso até que o calcanhar se aproxime dos glúteos.<br>
+                            5. Retorne lentamente à posição inicial, controlando o movimento.<br>
+                            6. Repita para o número desejado de repetições e troque de perna.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Perna/Flexora_em_pe.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="pitch-intro" id="exercicios-gluteos">
+                    <br><br><br>
+                    <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS PARA OS GLÚTEOS</h1>
+                    <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seus glúteos.</p>
+                </div>
+
+                <div class="row exercise-row">
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Cadeira Abdutora</h1>
+                            <p><strong>Passos:</strong><br>
+                            1. Sente-se na cadeira abdutora e ajuste o encosto e as almofadas laterais para que fiquem confortáveis e alinhadas com as laterais das coxas.<br>
+                            2. Segure as alças laterais da máquina para maior estabilidade.<br>
+                            3. Mantenha a postura ereta com o tronco alinhado e o abdômen contraído.<br>
+                            4. Empurre as almofadas para fora, afastando as pernas o máximo possível, sem perder o controle do movimento.<br>
+                            5. Retorne lentamente à posição inicial, controlando a resistência da máquina.<br>
+                            6. Repita o movimento para o número desejado de repetições.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Perna/Cadeira_abdutora.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Exercício 3 - Elevação Pélvica -->
+                    <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="pitch-content">
+                            <h1>Elevação Pélvica</h1>
+                            <p><strong>Passos:</strong><br>1. Sente-se em frente a uma bancada com os ombros apoiados nela, mantendo as omoplatas pressionadas.<br>2. Coloque uma barra ou halteres no colo, sobre as pernas.<br>3. Role a barra ou os halteres para cima, sobre os quadris.<br>4. Pressione os quadris para cima, estendendo completamente os quadris e contraindo os glúteos.<br>5. Mantenha a posição por um segundo e depois retorne lentamente à posição inicial.</p>
+                        </div>
+                        <div class="video">
+                            <iframe width="100%" height="315" src="videos/Perna/Elevação.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" id="contato">
+            <div class="container">
+                <div class="col-md-6 contact">
+                    <h1>Sobre Nós</h1>
+                    <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                </div>
+                <div class="col-md-3 contact footer-menu">
+                    <!-- <h1>Social</h1>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul> -->
+                </div>
+                <div class="col-md-3 contact">
+                    <h1>Contato</h1>
+                    <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                    <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="back-top" class="back-to-top page-scroll" href="#main">
+            <i class="ion-ios-arrow-thin-up"></i>
+        </a>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+    
+</body>
+
+</html>

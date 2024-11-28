@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Esquema de Dieta</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FitTrack - Esquema de Dieta Personalizado">
+    <meta name="keywords" content="FitTrack, Dieta, Nutrição, Esquema de Dieta">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inclua o CSS do AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #000000, #ffffff);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar-brand img {
+            width: 100px;
+            height: 40px;
+        }
+
+        .btn-primary {
+            background-color: #ff784e;
+            border-radius: 25px;
+            padding: 10px 20px;
+            border-color: #ff784e;
+            transition: background-color 0.3s, transform 0.3s;
+            /* Transição suave */
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5722;
+            border-color: #ff5722;
+            transform: translateY(-2px);
+            /* Efeito de elevação ao passar o mouse */
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .form-control:focus {
+            border-color: #ff784e;
+            box-shadow: none;
+        }
+
+        .result-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            /* Transição suave */
+        }
+
+        .result-container:hover {
+            transform: scale(1.02);
+            /* Efeito de aumento ao passar o mouse */
+        }
+
+        h1,
+        h3,
+        h1 {
+            font-size: 3em;
+            /* Aumentando o tamanho do título */
+            color: #333;
+            /* Cor escura para melhor contraste */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            /* Sombra leve para destacar ainda mais */
+        }
+
+        p {
+            font-size: 1.5em;
+            /* Aumentando o tamanho do parágrafo */
+            color: #444;
+            /* Cor cinza mais escura para contraste */
+            line-height: 1.6;
+            /* Aumentando o espaçamento entre linhas */
+        }
+
+        h3 {
+            color: #ffffff !important;
+            /* Cor do título mais clara e vibrante */
+            margin-bottom: 15px;
+            /* Espaçamento inferior */
+            font-family: 'Arial', sans-serif;
+            /* Fonte mais estilizada */
+            font-size: 1.8em;
+            /* Aumentando o tamanho do título */
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background-color: #292929;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer a {
+            color: #ff784e;
+        }
+
+        .icon {
+            font-size: 30px;
+            color: #ff784e;
+        }
+
+        /* Estilo do plano alimentar */
+        #weekly-plan {
+            display: flex;
+            /* Usando flexbox para alinhar os dias lado a lado */
+            flex-wrap: wrap;
+            /* Permite que os itens se movam para a linha de baixo se não houver espaço suficiente */
+            justify-content: space-between;
+            /* Distribui o espaço entre os itens */
+            margin-top: 20px;
+            /* Espaçamento superior */
+            padding: 20px;
+            /* Padding ao redor do conteúdo */
+            border-radius: 15px;
+            /* Bordas arredondadas */
+            background-color: #f9f9f9;
+            /* Cor de fundo suave */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        .day-plan {
+            flex: 1 1 calc(30% - 20px);
+            /* Flex-grow, flex-shrink e uma largura base de 30% com espaçamento */
+            margin: 10px;
+            /* Margem uniforme */
+            padding: 15px;
+            /* Padding interno */
+            background-color: #ffffff !important;
+            /* Fundo branco */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Transições suaves */
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-weight: bold;
+            color: #000000;
+            /* Cor para destacar o título */
+            font-size: 1.2em;
+            /* Aumentando o tamanho da fonte */
+            text-align: center;
+            /* Centraliza o texto do título da refeição */
+            margin-bottom: 10px;
+            /* Espaçamento inferior para separação */
+        }
+
+        .day-plan:hover {
+            transform: scale(1.02);
+            /* Aumenta o card ao passar o mouse */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            /* Sombra ao passar o mouse */
+        }
+
+        .day-plan .meal-title {
+            font-weight: bold;
+            color: #ff784e;
+            font-size: 2.5em;
+            /* Aumentando o tamanho da fonte para destacar mais */
+            text-align: center;
+            /* Centraliza o texto do título da refeição */
+            margin-bottom: 10px;
+            /* Espaçamento inferior para separação */
+        }
+
+        .day-title {
+            color: #4CAF50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            /* Centraliza o título do dia */
+        }
+
+        .meal {
+            margin-bottom: 15px;
+        }
+
+        .meal-title {
+            font-weight: bold;
+            color: #ff784e;
+            font-size: 6em;
+            /* Aumentando o tamanho da fonte para destacar mais */
+        }
+
+        .meal-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .meal-details span {
+            color: #999;
+        }
+
+        .meal-icon {
+            font-size: 1.2em;
+            color: #ff784e;
+        }
+
+        .alimento {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+        }
+
+        .alimento:last-child {
+            border-bottom: none;
+        }
+
+        .alimento h5 {
+            font-size: 16px;
+            /* Aumenta o tamanho da fonte do nome do alimento */
+            font-weight: bold;
+            /* Define o texto como negrito */
+        }
+
+        .alimento p {
+            font-size: 14px;
+            /* Tamanho da fonte dos macronutrientes */
+        }
+
+        /* Estilos adicionais para animações e interatividade */
+        .form-group {
+            margin-bottom: 15px;
+            /* Espaçamento entre os campos do formulário */
+        }
+
+        .form-control {
+            color: #555;
+            /* Cor do texto dos campos do formulário */
+            font-size: 1.1em;
+            /* Aumentando o tamanho da fonte dos campos */
+            background-color: #fff;
+            /* Cor de fundo branca */
+            border: 1px solid #ccc;
+            /* Borda padrão */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            padding: 10px;
+            /* Espaçamento interno para melhor aparência */
+            box-shadow: none;
+            /* Remover sombra para evitar aparência indesejada */
+            width: 100%;
+            /* Garantir que ocupe toda a largura */
+            height: 45px;
+            /* Definindo uma altura fixa para os inputs */
+            box-sizing: border-box;
+            /* Inclui bordas e padding no cálculo da largura */
+            outline: none;
+            /* Remover contorno padrão */
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            /* Cor da borda ao focar */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            /* Sombra ao focar */
+        }
+
+        select.form-control {
+            appearance: none;
+            /* Removendo o estilo padrão do dropdown */
+            background-color: #fff;
+            /* Fundo branco */
+            border: 1px solid #ccc;
+            /* Borda padrão */
+            padding: 10px;
+            /* Espaçamento interno */
+            width: 100%;
+            /* Ocupa toda a largura do campo */
+            height: 45px;
+            /* Definindo uma altura fixa para os selects */
+            box-sizing: border-box;
+            /* Inclui bordas e padding no cálculo da largura */
+            cursor: pointer;
+            /* Cursor para indicar que é um dropdown */
+        }
+
+        /* Estilos para a animação de entrada */
+        .wow {
+            visibility: hidden;
+            /* Inicialmente invisível para animação */
+        }
+
+        .wow.fadeInDown {
+            animation: fadeInDown 1s forwards;
+            /* Animação */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilo das informações pessoais */
+        .pitch-intro p,
+        .pitch-intro h1 {
+            color: rgb(0, 204, 255) !important;
+            /* Cor do texto mais clara para melhorar a legibilidade */
+        }
+
+        /* Estilo para as seções de informações pessoais e seu esquema de dieta */
+        .pitch-intro h1,
+        .pitch-intro h3 {
+            color: #007bff;
+            /* Um tom mais claro para os títulos */
+        }
+
+        .pitch-intro p {
+            color: rgb(0, 204, 255) !important;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer p {
+
+            font-size: 13px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.3;
+            margin: 10px 0 30px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        label {
+            color: white;
+            /* Cor clara para todos os rótulos */
+            font-size: 1.1em;
+            /* Tamanho da fonte dos rótulos */
+        }
+
+        #plano-container {
+            margin-top: 50px;
+        }
+
+        .plan-title {
+            font-size: 2em;
+            /* Aumentando o tamanho do título do plano alimentar */
+            text-align: center;
+            /* Centralizando o título */
+            color: #4CAF50;
+            /* Cor verde para o título */
+        }
+
+        .calorie-macro-container {
+            background-color: #ffffff !important;
+            /* Fundo branco para contraste */
+            border-radius: 15px;
+            /* Bordas arredondadas */
+            padding: 20px;
+            /* Espaçamento interno */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            /* Sombra suave */
+            margin-top: 20px;
+            /* Espaçamento superior */
+        }
+
+        .result-item {
+            display: flex;
+            /* Usar flexbox para alinhar ícones e texto */
+            align-items: center;
+            /* Centralizar verticalmente */
+            margin-bottom: 15px;
+            /* Espaçamento entre os itens */
+            padding: 10px;
+            /* Espaçamento interno */
+            border-radius: 10px;
+            /* Bordas arredondadas */
+            background-color: #f9f9f9;
+            /* Fundo suave para cada item */
+            transition: background-color 0.3s;
+            /* Transição suave */
+        }
+
+        .result-item:hover {
+            background-color: #e8f5e9;
+            /* Mudança de cor ao passar o mouse */
+        }
+
+        .result-icon {
+            font-size: 28px;
+            /* Tamanho do ícone */
+            color: #ff784e;
+            /* Cor do ícone */
+            margin-right: 10px;
+            /* Espaçamento entre ícone e texto */
+        }
+
+        .description {
+            font-size: 14px;
+            /* Tamanho da fonte das descrições */
+            color: #000000;
+            /* Cor da descrição */
+            margin-left: 10px;
+            /* Espaçamento entre texto e descrição */
+            align-self: flex-start;
+            /* Alinhar a descrição ao topo */
+        }
+
+        .info-title {
+            color: #2e2e2e;
+            /* Cor branca para os títulos */
+            font-size: 24px;
+            /* Tamanho da fonte */
+            margin-bottom: 20px;
+            /* Espaçamento abaixo do título */
+            font-weight: bold;
+            /* Negrito */
+            text-align: center;
+            /* Alinhamento centralizado */
+            margin-top: 20px;
+            /* Espaçamento acima do título para mais centralização */
+        }
+
+        .result-container {
+            text-align: center;
+            /* Centraliza o conteúdo dentro do container */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            /* Cor azul para os botões */
+            border-color: #007bff;
+            /* Cor da borda do botão */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            /* Cor azul mais escura ao passar o mouse */
+            border-color: #0056b3;
+            /* Cor da borda ao passar o mouse */
+        }
+
+        .pitch-intro h1 {
+            color: rgb(0, 204, 255) !important;
+            /* Definindo a cor do título como branco */
+        }
+
+        .pitch-intro p {
+            color: #ffffff !important;
+            /* Definindo a cor do parágrafo como branco */
+        }
+
+        .nova-hero-treinamentoPersonalizado {
+            background: linear-gradient(to bottom right, #000000, #113fd6);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .table-container {
+            background-color: #394047;
+            /* Cor de fundo suave */
+            border-radius: 8px;
+            /* Bordas arredondadas */
+            padding: 20px;
+            /* Espaçamento interno */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        .table {
+            width: 100%;
+            /* Tabela ocupa toda a largura disponível */
+            border-collapse: collapse;
+            /* Remove espaços entre as células */
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            /* Centraliza o texto */
+            padding: 15px;
+            /* Espaçamento interno */
+            border: 1px solid #dee2e6;
+            /* Borda leve nas células */
+        }
+
+        .table thead {
+            background-color: #007bff;
+            /* Cor de fundo do cabeçalho */
+            color: #ffffff !important;
+            /* Cor do texto do cabeçalho */
+        }
+
+        .table tbody tr {
+            transition: background-color 0.3s;
+            /* Transição suave para o efeito hover */
+        }
+
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+            /* Cor de fundo ao passar o mouse */
+        }
+
+        .infopessoal-title {
+            margin-bottom: 20px;
+            /* Espaço abaixo do título */
+            font-size: 1.8rem;
+            /* Tamanho da fonte do título */
+            font-weight: bold;
+            /* Negrito */
+            color: rgb(0, 204, 255) !important;
+            /* Cor do texto */
+        }
+
+        /* Estilos para o botão */
+        #baixar-pdf {
+            background-color: #007bff;
+            /* Cor de fundo */
+            color: #fff;
+            /* Cor do texto */
+            border: none;
+            /* Remover bordas padrão */
+            border-radius: 5px;
+            /* Bordas arredondadas */
+            padding: 10px 20px;
+            /* Espaçamento interno */
+            font-size: 16px;
+            /* Tamanho da fonte */
+            cursor: pointer;
+            /* Cursor de mão ao passar o mouse */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Transições suaves */
+        }
+
+        /* Efeito de hover */
+        #baixar-pdf:hover {
+            background-color: #0056b3;
+            /* Cor mais escura no hover */
+            transform: scale(1.05);
+            /* Efeito de crescimento */
+        }
+
+        /* Estilos adicionais para a tabela e contêiner */
+        .table-container {
+            margin-top: 20px;
+            /* Espaçamento superior */
+            padding: 20px;
+            /* Espaçamento interno */
+            background-color: #f8f9fa;
+            /* Cor de fundo clara */
+            border-radius: 10px;
+            /* Bordas arredondadas do contêiner */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra leve */
+        }
+
+        .table {
+            width: 100%;
+            /* Largura total */
+            border-collapse: collapse;
+            /* Colapsar bordas */
+        }
+
+        .table th,
+        .table td {
+            padding: 12px;
+            /* Espaçamento interno das células */
+            text-align: left;
+            /* Alinhamento à esquerda */
+            border-bottom: 1px solid #ddd;
+            /* Linha inferior */
+        }
+
+        .table th {
+            background-color: #007bff;
+            /* Cor de fundo dos cabeçalhos */
+            color: #fff;
+            /* Cor do texto dos cabeçalhos */
+        }
+
+        .table tr:hover {
+            background-color: #f1f1f1;
+            /* Cor de fundo ao passar o mouse */
+        }
+
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            /* Alinha os itens verticalmente */
+            align-items: center;
+            /* Centraliza os itens horizontalmente */
+        }
+
+        .table {
+            width: auto;
+            /* Define a largura da tabela como automática */
+            max-width: 100%;
+            /* Garante que a tabela não exceda a largura do contêiner */
+            margin-bottom: 20px;
+            /* Espaçamento inferior da tabela */
+        }
+
+        .btn {
+
+            font-size: 15px;
+            /* Tamanho da fonte do botão */
+            background-color: #007bff;
+            /* Cor de fundo do botão */
+            color: white;
+            /* Cor do texto do botão */
+            border: none;
+            /* Remove bordas */
+            border-radius: 5px;
+            /* Arredonda os cantos do botão */
+            cursor: pointer;
+            /* Muda o cursor ao passar sobre o botão */
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            /* Cor do botão ao passar o mouse */
+        }
+
+        h3.info-title {
+            color: #ffffff
+        }
+
+        .nova-hero-treinamentoPersonalizado {
+            background: linear-gradient(to bottom right, #000000, #122a6b);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .hero-content {
+            margin-top: 300px;
+            /* Ajuste este valor para mover mais ou menos */
+        }
+
+        h3.estiloplanodetreino {
+            margin-bottom: 20px;
+            /* Espaço abaixo do título */
+            font-size: 1.8rem;
+            /* Tamanho da fonte do título */
+            font-weight: bold;
+            /* Negrito */
+            color: rgb(0, 204, 255) !important;
+            /* Cor do texto */
+
+        }
+
+        h3.classeplanotreino {
+            margin-bottom: 20px;
+            /* Espaço abaixo do título */
+            font-size: 1.8rem;
+            /* Tamanho da fonte do título */
+            font-weight: bold;
+            /* Negrito */
+            color: #1a1a1a !important;
+            /* Cor do texto */
+
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Definindo a cor padrão do texto */
+        h1,
+        h2,
+        h3,
+        .pitch-content p {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        /* Estilização do link de e-mail */
+        a[href="mailto:suportefitrack@gmail.com"] {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        .pitch-intro p {
+            color: #ffffff !important;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footer p {
+
+            font-size: 13px;
+            font-weight: 400;
+            color: white;
+            line-height: 1.3;
+            margin: 10px 0 30px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+
+        /* Estilo para a lista animada */
+        ul.wow.fadeInUp li {
+            color: rgb(0, 204, 255) !important;
+        }
+
+        /* Texto destacado */
+        .highlighted-text {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: rgb(0, 204, 255) !important;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Container para opções */
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            margin-left: 50px;
+            /* Alinha os itens à direita */
+        }
+
+        /* Estilo das opções */
+        .option {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        /* Layout flexível para exercícios */
+        .exercise-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .exercise-row .col-md-6 {
+            flex: 0 0 48%;
+            /* Ocupa 48% da largura do container */
+            max-width: 48%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise-row .col-md-12 {
+            flex: 0 0 48%;
+            max-width: 48%;
+            margin-top: 20px;
+        }
+
+        /* Estilo do conteúdo e vídeos */
+        .pitch-content,
+        .video {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo do conteúdo do pitch */
+        .pitch-content {
+            background-color: #2c2f33;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pitch-content:hover {
+            transform: translateY(-10px);
+        }
+
+
+        .pitch-content p {
+            color: #b3b3b3;
+            font-size: 16px;
+        }
+
+        /* Estilo dos vídeos */
+        .video {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        /* Flex layout para filas de itens */
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row-flex .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navbar-collapse" aria-expanded="false">
+                            <span class="sr-only">Alternar navegação</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="indexlogado.html">
+                            <img src="images/logo.png" alt="FitTrack" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                            <li><a class="page-scroll" href="#esquema-treino">Treino</a></li>
+                            <li><a href="php/logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main app form" id="main">
+            <div class="nova-hero-treinamentoPessoal" style="padding: 110px;">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1>TREINAMENTO PERSONALIZADO</h1>
+                            <p class="highlighted-text">Plano de treino baseado em suas
+                                necessidades e objetivos.</p>
+                            <a href="#esquema-treino" id="botao-comecar" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Inclua o link do Font Awesome no cabeçalho do seu HTML -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Inclua o CSS do AOS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+
+        <div class="pitch text-center" id="esquema-treino" data-wow-delay="0.2s">
+            <div class="container">
+                <div class="pitch-intro">
+                    <h1>FORNEÇA SUAS INFORMAÇÕES</h1>
+                    <p>Insira seus dados para gerar um plano de treino personalizado com base no seu peso, altura, idade e nível de atividade física.</p>
+                </div>
+                <div class="row">
+                    <!-- Informações Pessoais -->
+                    <div class="col-md-6" data-aos="fade-right">
+                        <h3 class="infopessoal-title">Informações Pessoais</h3>
+                        <form id="treino-form">
+                            <div class="form-group">
+                                <label id="peso-label" for="peso">Peso (kg):</label>
+                                <input type="number" class="form-control" id="peso" name="peso" placeholder="Insira seu peso (ex: 70.5 kg)" step="0.1" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="altura-label" for="altura">Altura (cm):</label>
+                                <input type="number" class="form-control" id="altura" name="altura" placeholder="Insira sua altura (ex: 175 cm)" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="idade-label" for="idade">Idade:</label>
+                                <input type="number" class="form-control" id="idade" name="idade" placeholder="Insira sua idade (ex: 25 anos)" required>
+                            </div>
+                            <div class="form-group">
+                                <label id="sexo-label" for="sexo">Sexo:</label>
+                                <select class="form-control" id="sexo" name="sexo" required>
+                                    <option value="" disabled selected>Selecione seu sexo</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label id="atividade-label" for="atividade">Nível de Atividade Física:</label>
+                                <select class="form-control" id="atividade" name="atividade" required>
+                                    <option value="" disabled selected>Selecione seu nível de atividade</option>
+                                    <option value="sedentario">Sedentário</option>
+                                    <option value="leve">Leve (1-3 vezes por semana)</option>
+                                    <option value="moderado">Moderado (3-5 vezes por semana)</option>
+                                    <option value="intenso">Intenso (6-7 vezes por semana)</option>
+                                    <option value="extremo">Extremo (Treinos diários intensos)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label id="objetivo-label" for="objetivo">Objetivo:</label>
+                                <select class="form-control" id="objetivo" name="objetivo" required>
+                                    <option value="" disabled selected>Escolha seu objetivo</option>
+                                    <option value="ganho_muscular">Ganhar Massa Muscular</option>
+                                    <option value="emagrecimento">Emagrecer</option>
+                                    <option value="ambos">Ganhar Massa e Emagrecer</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Gerar Treino</button>
+                        </form>
+                    </div>
+        
+                    <!-- Resultados do Plano de Treino -->
+                    <div class="col-md-6" data-aos="fade-left">
+                        <h3 class="estiloplanodetreino">Seu Plano de Treino</h3>
+                        <div id="treino-result" class="result-container">
+                            <div class="calorie-macro-container">
+                                <div class="result-item">
+                                    <i class="fas fa-running result-icon"></i>
+                                    <p id="treino-cardio"></p>
+                                    <span class="description">Sessões de Cardio</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-bullseye result-icon"></i>
+                                    <p id="treino-musculacao"></p>
+                                    <span class="description">Sessões de Musculação</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-clock result-icon"></i>
+                                    <p id="tempo-treino"></p>
+                                    <span class="description">Duração Média do Treino</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-bed result-icon"></i>
+                                    <p id="tempo-descanso"></p>
+                                    <span class="description">Dias de Descanso</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-heartbeat result-icon"></i>
+                                    <p id="nivel-intensidade"></p>
+                                    <span class="description">Nível de Intensidade</span>
+                                </div>
+                            </div>
+                            <button id="gerar-plano-treino" class="btn btn-primary" style="margin-top: 10px;">Gerar Plano de Treino</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Seção Entenda Seu Plano de Treino -->
+                <div class="row" style="margin-top: 50px;"> <!-- Nova linha completa -->
+                    <div class="col-md-12"> <!-- Alinha toda a largura -->
+                        <h3 class="info-title">Entenda seu Plano de Treino</h3>
+                        <div class="table-container" style="text-align: left;">
+                            <p>Seu plano de treino é ajustado ao nível de atividade física informado. Aqui está a explicação de cada nível:</p>
+                            <ul>
+                                <li><strong style="color: rgb(0, 204, 255);">Sedentário:</strong> Inicia com 2 dias de musculação e 1 dia de cardio. Esse plano é focado em adaptação inicial, para evitar lesões e criar consistência. Após 4-6 semanas, considere progredir para o nível <strong>Leve</strong> se você estiver confortável com a rotina atual.</li>
+                                <br>
+                                <li><strong style="color: rgb(0, 204, 255);">Leve:</strong> Inclui 3 dias de musculação e 2 dias de cardio, com 2 dias de descanso. Esse nível é ideal para quem já tem alguma experiência, buscando melhorar resistência e força. Avance para <strong>Moderado</strong> após 6-8 semanas ou quando sentir que pode lidar com mais volume de treino.</li>
+                                <br>
+                                <li><strong style="color: rgb(0, 204, 255);">Moderado:</strong> Com 4 dias de musculação e 2 de cardio, este nível é mais desafiador e requer maior compromisso. Permite desenvolvimento equilibrado. Após 8 semanas, avalie sua capacidade física e avance para <strong>Intenso</strong> se estiver preparado para desafios maiores.</li>
+                                <br>
+                                <li><strong style="color: rgb(0, 204, 255);">Intenso:</strong> Ideal para indivíduos experientes, com 5 dias de musculação e 2 de cardio. Focado em maximizar ganhos. Mantenha por 8-12 semanas antes de considerar o nível <strong>Extremo</strong>, que exige alta dedicação.</li>
+                                <br>
+                                <li><strong style="color: rgb(0, 204, 255);">Extremo:</strong> Para atletas ou entusiastas avançados, com 6 dias de musculação e 1 dia de cardio. Esse nível demanda disciplina e planejamento rigoroso para evitar overtraining. Prossiga com este nível apenas se estiver monitorando sua recuperação e resultados.</li>
+                            </ul>
+                            
+                            <p><strong style="color: rgb(0, 204, 255);">O que é overtraining?</strong></p>
+                            <p>O overtraining ocorre quando o corpo é submetido a um nível excessivo de esforço físico, sem tempo suficiente para recuperação adequada. Isso pode levar a sintomas como fadiga extrema, queda no desempenho, insônia, dores musculares persistentes, irritabilidade e maior propensão a lesões ou doenças. Para evitar o overtraining, é fundamental respeitar os dias de descanso, monitorar sinais do corpo e ajustar o volume e a intensidade do treino conforme necessário. A recuperação adequada é essencial para obter melhores resultados e manter a saúde.</p>
+                            
+                            
+                            <p>Recomendamos que você acompanhe sua evolução física, níveis de energia e bem-estar geral para ajustar os treinos de acordo. Consulte um profissional se necessário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row table-container"
+            style="padding: 20px; border-radius: 15px; background-color: #f5f7fa; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <div class="col-12">
+                <h3 class="classeplanotreino"
+                    style="text-align: center; font-size: 26px; font-weight: bold; color: #004085; margin-bottom: 20px;">
+                    Plano de Treino Semanal</h3>
+                <table class="table" style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
+                    <thead style="background-color: #004085; color: white;">
+                        <tr>
+                            <th style="padding: 15px; font-size: 18px; border-radius: 8px 0 0 8px;">Dia da Semana</th>
+                            <th style="padding: 15px; font-size: 18px; border-radius: 0 8px 8px 0;">Atividade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plano-semanal" style="background-color: #ffffff;">
+                        <!-- Treinos semanais serão gerados aqui -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="baixar-pdf"
+                style="margin-top: 20px; padding: 12px 20px; font-size: 16px; font-weight: bold; color: white; background-color: #007bff; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; display: block; margin-left: auto; margin-right: auto;">
+                Baixar Plano em PDF
+            </button>
+        </div>
+
+
+        <style>
+            /* Estilos para os elementos da tabela */
+            .table-container h3.info-title {
+                font-family: Arial, sans-serif;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            /* Estilo para as linhas da tabela */
+            .table-container table tbody tr {
+                transition: background-color 0.3s;
+            }
+
+            .table-container table tbody tr:nth-child(even) {
+                background-color: #f3f3f3;
+            }
+
+            .table-container table tbody tr:hover {
+                background-color: #e0f7fa;
+            }
+
+            /* Estilo para o botão */
+            #baixar-pdf:hover {
+                background-color: #0056b3;
+            }
+
+            #baixar-pdf:focus {
+                outline: none;
+            }
+
+            .table-container {
+                padding: 20px;
+                border-radius: 15px;
+                background-color: #f5f7fa;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .table-container:hover {
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .classeplanotreino {
+                text-align: center;
+                font-size: 26px;
+                font-weight: bold;
+                color: #004085;
+                margin-bottom: 20px;
+            }
+
+            .table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+            }
+
+            .table thead {
+                background-color: #004085;
+                color: white;
+            }
+
+            .table th {
+                padding: 15px;
+                font-size: 18px;
+                text-align: left;
+                border-radius: 8px 0 0 8px;
+            }
+
+            .table th:last-child {
+                border-radius: 0 8px 8px 0;
+            }
+
+            .table tbody td {
+                padding: 15px;
+                background-color: #ffffff;
+                font-size: 16px;
+                color: #333;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            }
+
+            #baixar-pdf {
+                display: block;
+                margin: 20px auto;
+                padding: 12px 20px;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                background-color: #007bff;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            #baixar-pdf:hover {
+                background-color: #0056b3;
+                box-shadow: 0 4px 10px rgba(0, 91, 187, 0.3);
+            }
+        </style>
+
+    </div>
+    </div>
+
+    <div class="footer" id="contact">
+        <div class="container">
+            <div class="col-md-6 contact">
+                <h1>Sobre Nós</h1>
+                <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno
+                    Covolam
+                    Diniz, como um trabalho de conclusão de curso. O projeto tem como objetivo aproveitar a tecnologia
+                    para
+                    melhorar a qualidade de vida e a saúde das pessoas. Estamos comprometidos em desenvolver soluções
+                    inovadoras que promovam hábitos saudáveis e atendam às necessidades individuais de nossos usuários.
+                </p>
+            </div>
+            <div class="col-md-3 contact footer-menu">
+
+            </div>
+            <div class="col-md-3 contact">
+                <h1>Contate-nos</h1>
+                <p> Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar
+                    dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/jquery.subscribe.js"></script>
+
+
+    <!-- Inclua o JS do AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init(); // Inicializa AOS
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            document.getElementById("treino-form").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                // Pegando os valores dos inputs do formulário
+                const peso = parseFloat(document.getElementById("peso").value);
+                const altura = parseFloat(document.getElementById("altura").value);
+                const idade = parseInt(document.getElementById("idade").value);
+                const sexo = document.getElementById("sexo").value;
+                const atividade = document.getElementById("atividade").value; // Nível de atividade
+                const objetivo = document.getElementById("objetivo").value;
+
+                let treinoMusculacao, treinoCardio, tempoTreino, nivelIntensidade, diasDescanso;
+
+                // Definindo parâmetros com base no objetivo do usuário
+                if (atividade === "extremo") {
+                    treinoMusculacao = 6; // Musculação 6 dias
+                    treinoCardio = 1; // Cardio 1 dia
+                    diasDescanso = 0; // Sem dias de descanso
+                    tempoTreino = "60-90 minutos";
+                    nivelIntensidade = "Muito Alta";
+                } else if (atividade === "intenso") {
+                    treinoMusculacao = 5; // Musculação 5 dias
+                    treinoCardio = 2; // Cardio 2 dias
+                    diasDescanso = 0; // Sem dias de descanso
+                    tempoTreino = "60-90 minutos";
+                    nivelIntensidade = "Alta";
+                } else if (atividade === "moderado") {
+                    treinoMusculacao = 4; // Musculação 4 dias
+                    treinoCardio = 2; // Cardio 2 dias
+                    diasDescanso = 1; // 1 dia de descanso
+                    tempoTreino = "60-90 minutos";
+                    nivelIntensidade = "Moderada";
+                } else if (atividade === "leve") {
+                    treinoMusculacao = 3; // Musculação 3 dias
+                    treinoCardio = 2; // Cardio 2 dias
+                    diasDescanso = 2; // 2 dias de descanso
+                    tempoTreino = "45-75 minutos";
+                    nivelIntensidade = "Moderada";
+                } else if (atividade === "sedentario") {
+                    treinoMusculacao = 2; // Musculação 2 dias
+                    treinoCardio = 1; // Cardio 1 dia
+                    diasDescanso = 4; // 4 dias de descanso
+                    tempoTreino = "30-60 minutos";
+                    nivelIntensidade = "Baixa";
+                }
+
+                // Certificando-se de que não há dias negativos de descanso
+                diasDescanso = Math.max(diasDescanso, 0);
+
+                // Exibindo as configurações de treino no HTML
+                document.getElementById("treino-cardio").innerText = `${treinoCardio} vezes por semana`;
+                document.getElementById("treino-musculacao").innerText = `${treinoMusculacao} vezes por semana`;
+                document.getElementById("tempo-treino").innerText = tempoTreino;
+                document.getElementById("tempo-descanso").innerText = `${diasDescanso} dias`;
+                document.getElementById("nivel-intensidade").innerText = nivelIntensidade;
+
+
+
+
+
+                // Ajustando a soma de sessões de treino para não exceder 7 dias
+                const totalTreinos = treinoMusculacao + treinoCardio + diasDescanso;
+                if (totalTreinos > 7) {
+                    const excess = totalTreinos - 7;
+                    if (treinoCardio > excess) {
+                        treinoCardio -= excess; // Remove o excesso de cardio
+                    } else {
+                        const restante = excess - treinoCardio;
+                        treinoCardio = 0; // Define cardio para 0 se não for possível remover mais
+                        treinoMusculacao -= restante; // Remove o restante do excesso da musculação
+                    }
+                }
+
+                // Exibindo as configurações de treino no HTML
+                document.getElementById("treino-cardio").innerText = `${treinoCardio} vezes por semana`;
+                document.getElementById("treino-musculacao").innerText = `${treinoMusculacao} vezes por semana`;
+                document.getElementById("tempo-treino").innerText = tempoTreino;
+                document.getElementById("tempo-descanso").innerText = `${diasDescanso} dias`;
+                document.getElementById("nivel-intensidade").innerText = nivelIntensidade;
+
+                // Gerando o plano de treino semanal
+                $('#gerar-plano-treino').click(function () {
+                    $.ajax({
+                        url: 'php/consulta_exercicios.php', // PHP que consulta o banco de dados
+                        type: 'GET',
+                        success: function (exerciciosPorGrupo) {
+                            const planoSemanal = [];
+                            const diasSemana = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'];
+                            const diasUsados = new Set();
+                            let diasTreinoConsecutivos = 0;
+                            let diasDescansoRestantes = 7 - (treinoMusculacao + treinoCardio);
+
+                            for (let i = 0; i < 7; i++) {
+                                if (treinoMusculacao > 0 || treinoCardio > 0) {
+                                    if (treinoMusculacao > 0 && (diasTreinoConsecutivos < 2 || diasDescansoRestantes === 0)) {
+                                        // Seleção de exercícios para musculação
+                                        const exerciciosDia = [];
+                                        const gruposUsados = new Set();
+
+                                        while (exerciciosDia.length < 4) {
+                                            const grupoAleatorio = Object.keys(exerciciosPorGrupo).filter(g => g !== 'Cardio')[Math.floor(Math.random() * (Object.keys(exerciciosPorGrupo).length - 1))];
+                                            if (exerciciosPorGrupo[grupoAleatorio] && exerciciosPorGrupo[grupoAleatorio].length > 0 && !gruposUsados.has(grupoAleatorio)) {
+                                                const exercicio = exerciciosPorGrupo[grupoAleatorio][Math.floor(Math.random() * exerciciosPorGrupo[grupoAleatorio].length)];
+                                                exerciciosDia.push(`${exercicio} - 3 séries de 10-12 reps`);
+                                                gruposUsados.add(grupoAleatorio);
+                                            }
+                                        }
+                                        planoSemanal.push(`<tr><td>${diasSemana[i]}</td><td>Musculação: ${exerciciosDia.join(", ")}</td></tr>`);
+                                        treinoMusculacao--;
+                                        diasTreinoConsecutivos++;
+                                    } else if (treinoCardio > 0 && (diasTreinoConsecutivos < 2 || diasDescansoRestantes === 0)) {
+                                        // Seleção de exercícios para cardio
+                                        const exercicioCardio = exerciciosPorGrupo['Cardio'][Math.floor(Math.random() * exerciciosPorGrupo['Cardio'].length)];
+                                        planoSemanal.push(`<tr><td>${diasSemana[i]}</td><td>Cardio: ${exercicioCardio} - Duração: ${tempoTreino}, Intensidade: ${nivelIntensidade}</td></tr>`);
+                                        treinoCardio--;
+                                        diasTreinoConsecutivos++;
+                                    }
+                                    diasUsados.add(i);
+
+                                    // Verifica o limite de dias consecutivos e insere um dia de descanso se necessário
+                                    if (diasTreinoConsecutivos === 2 && diasDescansoRestantes > 0) {
+                                        i++;
+                                        planoSemanal.push(`<tr><td>${diasSemana[i]}</td><td>Descanso (Recuperação)</td></tr>`);
+                                        diasUsados.add(i);
+                                        diasDescansoRestantes--;
+                                        diasTreinoConsecutivos = 0;
+                                    }
+                                }
+                            }
+
+                            // Preencher os dias restantes com descanso, se necessário
+                            for (let i = 0; i < 7; i++) {
+                                if (!diasUsados.has(i)) {
+                                    planoSemanal[i] = `<tr><td>${diasSemana[i]}</td><td>Descanso (Recuperação)</td></tr>`;
+                                }
+                            }
+
+                            // Exibindo o plano semanal no HTML
+                            document.getElementById("plano-semanal").innerHTML = planoSemanal.join('');
+                        },
+                        error: function () {
+                            alert("Erro ao consultar o banco de dados.");
+                        }
+                    });
+                });
+
+
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('baixar-pdf').addEventListener('click', () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Título do PDF
+            doc.setFontSize(20);
+            doc.text("Plano de Treino Semanal", 10, 10);
+
+            // Adiciona informações do plano de treino
+            doc.setFontSize(16);
+            doc.text("Seu Plano de Treino:", 10, 20);
+
+            // Captura as informações do plano de treino
+            const treinoCardio = document.getElementById('treino-cardio').innerText;
+            const treinoMusculacao = document.getElementById('treino-musculacao').innerText;
+            const tempoTreino = document.getElementById('tempo-treino').innerText;
+            const tempoDescanso = document.getElementById('tempo-descanso').innerText;
+            const nivelIntensidade = document.getElementById('nivel-intensidade').innerText;
+
+            // Adiciona as informações no PDF
+            const info = [
+                `Sessões de Cardio: ${treinoCardio}`,
+                `Sessões de Musculação: ${treinoMusculacao}`,
+                `Duração Média do Treino: ${tempoTreino}`,
+                `Dias de Descanso: ${tempoDescanso}`,
+                `Nível de Intensidade: ${nivelIntensidade}`
+            ];
+
+            let positionY = 30; // Posição inicial para o texto
+            info.forEach(line => {
+                doc.setFontSize(12);
+                doc.text(line, 10, positionY);
+                positionY += 10; // Incrementa a posição Y
+            });
+
+            // Adiciona um espaço antes da tabela
+            positionY += 10;
+
+            // Obtém a tabela do plano de exercícios
+            const planoSemanal = document.getElementById('plano-semanal');
+            const rows = planoSemanal.querySelectorAll('tr');
+
+            // Adiciona os dados da tabela ao PDF
+            rows.forEach((row, index) => {
+                const columns = row.querySelectorAll('td, th');
+
+                if (index === 0) {
+                    // Adiciona cabeçalho com formatação
+                    doc.setFontSize(14);
+                    columns.forEach(col => {
+                        const colText = col.innerText;
+                        const textLines = doc.splitTextToSize(colText, 180); // Ajusta a largura máxima
+                        doc.text(textLines, 10, positionY);
+                        positionY += textLines.length * 10; // Ajusta a posição Y com base no número de linhas
+                    });
+                } else {
+                    // Adiciona as linhas de dados
+                    const lineData = [];
+                    columns.forEach(col => {
+                        lineData.push(col.innerText);
+                    });
+                    const fullText = `${lineData[0]} - Atividade: ${lineData[1]}`; // Remove "Dia:"
+                    const textLines = doc.splitTextToSize(fullText, 180); // Ajusta a largura máxima
+                    doc.text(textLines, 10, positionY);
+                    positionY += textLines.length * 10; // Ajusta a posição Y com base no número de linhas
+                }
+
+                // Verifica se há espaço suficiente para a próxima linha
+                if (positionY > 260) {
+                    doc.addPage(); // Adiciona uma nova página
+                    positionY = 20; // Reseta a posição para o início da nova página
+                }
+            });
+
+            // Salva o PDF
+            doc.save("plano_treino_semanal.pdf");
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>FitTrack - Exercícios de Peitoral e Abdômen</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exercícios de Peitoral - FitTrack">
+    <meta name="keywords" content="exercícios peitoral, fitness, saúde, musculação">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .pitch-content,
+        .video {
+            margin-bottom: 30px;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row-flex .col-md-6 {
+            display: flex;
+            flex-direction: column;
+        }
+        .exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.exercise-row .col-md-6 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-bottom: 30px;
+}
+
+.exercise-row .col-md-12 {
+    flex: 0 0 48%; 
+    max-width: 48%;
+    margin-top: 20px;
+}
+
+.pitch-content {
+    background-color: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.pitch-content:hover {
+    transform: translateY(-10px);
+}
+
+.pitch-content h1 {
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.pitch-content p {
+    color: #b3b3b3;
+    font-size: 16px;
+}
+
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ h1, h2, h3, .pitch-content p {
+    color: rgb(0, 204, 255) !important;
+}
+.pitch-intro p {
+    color: #ffffff !important; 
+    font-size: 14px;
+    line-height: 1.5; 
+    letter-spacing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer p {
+
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	line-height: 1.3;
+	margin: 10px 0 30px 0;
+        font-family: 'Roboto', sans-serif;
+}
+a[href="mailto:suportefitrack@gmail.com"] {
+    color: rgb(0, 204, 255) !important;
+}
+
+.highlighted-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(0, 204, 255) !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.video-credit {
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Alternar navegação</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="indexlogado.html">
+                        <img src="images/logo.png" width="80" height="30" alt="FitTrack" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="page-scroll" href="indexlogado.html">Início</a></li>
+                        <li><a class="page-scroll" href="#treinamento">Treinamento</a></li>
+                        <li><a class="page-scroll" href="#contato">Contato</a></li>
+                        <li><a href="php/logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Fim Navbar -->
+
+        <!-- Seção principal -->
+        <div class="main app form" id="main">
+            <div class="hero-section">
+                <div class="container nopadding">
+                    <div class="col-md-12">
+                        <div class="hero-content text-center">
+                            <h1 class="wow fadeInUp" data-wow-delay="0.1s">EXERCÍCIOS DE PEITORAL E ABDÔMEN</h1>
+                            <p class="highlighted-text wow fadeInUp" data-wow-delay="0.2s">Fortaleça e defina seu peitoral e músculos abdominais com estes exercícios</p>
+                            <a href="#treinamento" id="botao-comecar" class="btn btn-action wow fadeInUp"
+                                style="visibility: visible; animation-name: fadeInUp;">Começar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de exercícios -->
+            <div class="pitch text-center" id="treinamento">
+                <div class="container">
+                    <div class="pitch-intro">
+                        <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS DE PEITORAL</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seu peitoral.</p>
+                    </div>
+                    <div class="row row-flex">
+                        <!-- Exercício 1 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>FLEXÕES</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se de bruços com as mãos no chão, alinhadas com os ombros.<br>2. Levante o corpo estendendo os braços.<br>3. Abaixe o corpo até o peito quase tocar o chão.<br>4. Empurre de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Flexoes com o Clipchamp.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                            </div>
+                            
+                        </div>
+
+                        <!-- Exercício 2 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>SUPINO RETO</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco plano com os pés no chão.<br>2. Segure a barra com as mãos um pouco mais largas que os ombros.<br>3. Abaixe a barra até tocar o peito.<br>4. Empurre a barra de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Supino.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 3 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>SUPINO INCLINADO</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco inclinado a 45 graus.<br>2. Segure a barra com as mãos um pouco mais largas que os ombros.<br>3. Abaixe a barra até tocar a parte superior do peito.<br>4. Empurre a barra de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Supino inclinado.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 4 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>CROSS OVER</h1>
+                                <p><strong>Passos:</strong><br>1. Fique no meio de uma máquina de cabos, segurando uma alça em cada mão.<br>2. Comece com os braços abertos e ligeiramente flexionados.<br>3. Puxe as alças para baixo e na frente do corpo até as mãos se encontrarem.<br>4. Volte lentamente à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Cross.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 5 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>PECK DECK</h1>
+                                <p><strong>Passos:</strong><br>1. Sente-se na máquina peck deck com as costas retas.<br>2. Segure as alças com os cotovelos dobrados a 90 graus.<br>3. Junte os braços na frente do peito.<br>4. Volte lentamente à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Peck deck.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 7 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>CRUCIFIXO</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco plano com um haltere em cada mão.<br>2. Comece com os braços estendidos acima do peito.<br>3. Abaixe os halteres para os lados até sentir um alongamento no peito.<br>4. Levante os halteres de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/CRUCIFIXO.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 8 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>CRUCIFIXO INCLINADO</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco inclinado a 45 graus.<br>2. Segure um haltere em cada mão com os braços estendidos acima do peito.<br>3. Abaixe os halteres para os lados até sentir um alongamento no peito.<br>4. Levante os halteres de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Cruxifixo inclinado.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Exercício 9 -->
+                        <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                            <div class="pitch-content">
+                                <h1>PULLOVER</h1>
+                                <p><strong>Passos:</strong><br>1. Deite-se em um banco plano com um haltere.<br>2. Segure o haltere com ambas as mãos acima do peito.<br>3. Abaixe o haltere atrás da cabeça, sentindo um alongamento no peito.<br>4. Levante o haltere de volta à posição inicial.</p>
+                            </div>
+                            <div class="video">
+                                <iframe width="100%" height="315" src="videos/Peito/Pullover.mp4" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                    <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Seção de exercícios para o abdômen -->
+                <div class="pitch text-center" id="exercicios-abdomen">
+                    <div class="container">
+                        <div class="pitch-intro">
+                            <h1 class="wow fadeInDown" data-wow-delay="0.2s">EXERCÍCIOS PARA O ABDÔMEN</h1>
+                            <p class="wow fadeInDown" data-wow-delay="0.2s">Veja os melhores exercícios para trabalhar seu abdômen.</p>
+                        </div>
+                        <div class="row row-flex">
+                            <!-- Exercício 1 -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>ABDOMINAIS</h1>
+                                    <p><strong>Passos:</strong><br>1. Deite-se de costas com os joelhos dobrados e os pés no chão.<br>2. Coloque as mãos atrás da cabeça ou cruzadas sobre o peito.<br>3. Levante a parte superior do corpo em direção aos joelhos.<br>4. Volte lentamente à posição inicial.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Peito/abdominais.mp4" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                        <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                                </div>
+                            </div>
+
+                            <!-- Exercício 2 -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>PRANCHA</h1>
+                                    <p><strong>Passos:</strong><br>1. Comece na posição de prancha com os antebraços no chão e os cotovelos alinhados com os ombros.<br>2. Mantenha o corpo reto e estável.<br>3. Segure a posição pelo tempo desejado.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/arlivre/Prancha.mp4" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+
+                            <!-- Exercício 3 -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>BICICLETA</h1>
+                                    <p><strong>Passos:</strong><br>1. Deite-se de costas com as mãos atrás da cabeça.<br>2. Levante os joelhos em um ângulo de 90 graus.<br>3. Traga o cotovelo direito em direção ao joelho esquerdo enquanto estende a perna direita.<br>4. Alterne os lados em um movimento de pedalada.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Peito/Biscicleta.mp4" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                </div>
+                            </div>
+
+                            <!-- Exercício 4 -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>ABDOMINAL INFRA</h1>
+                                    <p><strong>Passos:</strong><br>1. Deite-se de costas com as pernas estendidas.<br>2. Coloque as mãos ao lado do corpo ou sob os quadris para suporte.<br>3. Levante as pernas juntas até formar um ângulo de 90 graus com o corpo.<br>4. Abaixe lentamente as pernas de volta à posição inicial sem tocar o chão.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Peito/Adbominal v-infra.mp4" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                        <p class="video-credit">Demonstração por Bruno Diniz na Academia IronWorks.</p>
+                                </div>
+                            </div>
+
+                            <!-- Exercício 7 -->
+                            <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="pitch-content">
+                                    <h1>MOUNTAIN CLIMBERS</h1>
+                                    <p><strong>Passos:</strong><br>1. Comece na posição de prancha alta com as mãos sob os ombros.<br>2. Traga o joelho direito em direção ao peito.<br>3. Troque rapidamente, levando o joelho esquerdo em direção ao peito.<br>4. Continue alternando as pernas em um movimento rápido de corrida.</p>
+                                </div>
+                                <div class="video">
+                                    <iframe width="100%" height="315" src="videos/Peito/Mountain.mp4" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                        <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                    </div>
+                                    
+                                </div>
+    
+                                <!-- Exercício 8 -->
+                                <div class="col-md-6 wow fadeInDown" data-wow-delay="0.2s">
+                                    <div class="pitch-content">
+                                        <h1>V-UP</h1>
+                                        <p><strong>Passos:</strong><br>1. Deite-se de costas com as pernas estendidas e os braços estendidos atrás da cabeça.<br>2. Levante simultaneamente as pernas e o tronco, tentando tocar os pés com as mãos.<br>3. Volte lentamente à posição inicial.</p>
+                                    </div>
+                                    <div class="video">
+                                        <iframe width="100%" height="315" src="videos/Peito/V- ups.mp4" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                            <p class="video-credit">Demonstração por Pedro Stefanini na Academia IronWorks.</p>
+                                    </div>
+                                    
+                                </div>
+    
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="footer" id="contato">
+                    <div class="container">
+                        <div class="col-md-6 contact">
+                            <h1>Sobre Nós</h1>
+                            <p>O FitTrack foi criado por dois estudantes de Engenharia de Computação, Pedro Stefanini e Bruno Covolam Diniz, como um trabalho de conclusão de curso. Nossa missão é proporcionar uma abordagem inovadora para melhorar a qualidade de vida e a saúde de nossos usuários.</p>
+                        </div>
+                        <div class="col-md-3 contact footer-menu">
+                          
+                        </div>
+                        <div class="col-md-3 contact">
+                            <h1>Contato</h1>
+                            <p>Entre em contato com nosso suporte ao cliente 24 horas por dia, 7 dias por semana, para tirar dúvidas ou compartilhar seu feedback. Estamos aqui para ajudar e melhorar sua experiência!</p>
+                            <a href="mailto:suportefitrack@gmail.com">suportefitrack@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <a id="back-top" class="back-to-top page-scroll" href="#main">
+                    <i class="ion-ios-arrow-thin-up"></i>
+                </a>
+            </div>
+        </div>
+    
+        <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script src="js/jquery.subscribe.js"></script>
+    </body>
+    
+    </html>
