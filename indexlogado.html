@@ -167,17 +167,104 @@
     color: #007acc; /* Ajuste a cor para o hover, se desejar */
 }
 
+
+   /* Modal centralizado */
+   .modal-content {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      border: none;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .modal-header {
+      border: none;
+    }
+
+    .modal-body {
+      font-size: 1.2em;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .modal-title {
+      font-size: 1.8em;
+      color: rgb(0, 204, 255); /* Títulos em azul */
+      font-weight: 700;
+    }
+
+    .modal-footer {
+      border: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #28a745;
+      border-color: #28a745;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+
+    .btn-primary:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    /* Alterada para .highlighted-alert-text */
+    .highlighted-alert-text {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: rgb(0, 204, 255); /* Só os títulos com cor azul */
+      background-color: transparent; /* Remover fundo azul */
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    /* Estilo dos títulos */
+    .modal-body h3, .modal-body p strong {
+      color: rgb(0, 204, 255); /* Títulos em azul */
+      font-weight: bold;
+    }
   </style>
 
   
 
 </head>
 
-<body onload="showAlert()"></body>>
+<body onload="showAlert()">
+  
+   <!-- Modal -->
+   <div id="alertModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="alertModalLabel">Atenção Importante</h5>
+        </div>
+        <div class="modal-body">
+          <p><strong>Lembre-se:</strong></p>
+          <p>Alongar antes de qualquer atividade física é essencial para prevenir lesões e melhorar o desempenho!</p>
+          <p>Aproveite a nossa página de alongamentos para orientações detalhadas e práticas.</p>
+          
+          <p><strong>Orientação Profissional Especializada:</strong><br>Consulte profissionais certificados, como educadores físicos ou personal trainers, para ajustar os exercícios às suas necessidades.</p>
+          
+          <p><strong>Avaliação e Acompanhamento Médico:</strong><br>Antes de iniciar qualquer programa de exercícios ou mudanças na alimentação, procure um médico.</p>
+          
+          <p><strong>Riscos e Isenção de Responsabilidade:</strong><br>
+            O FitTrack oferece orientações gerais para ajudar a iniciar sua rotina fitness e fornecer referências sobre práticas de exercícios, mas essas orientações não substituem o acompanhamento profissional. Não nos responsabilizamos por lesões, complicações de saúde ou quaisquer outros problemas decorrentes da execução dos exercícios ou práticas alimentares recomendadas pela plataforma. A adoção dessas orientações é de sua total responsabilidade.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <script>
-      function showAlert() {
-        alert("Lembre-se: Alongar antes de qualquer atividade física é essencial para prevenir lesões e melhorar o desempenho! Aproveite a nossa página de alongamentos para orientações detalhadas e práticas.");
+       function showAlert() {
+      $('#alertModal').modal('show');  // Exibe o modal ao carregar a página
     }
     // Função para pegar o valor de um parâmetro da URL
     function getUrlParameter(name) {
