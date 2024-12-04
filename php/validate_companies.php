@@ -19,7 +19,15 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta empresas pendentes
-    $stmt = $pdo->prepare("SELECT user_ID, user_name, email, cnpj, description ,`is_validated` FROM users WHERE cnpj IS NOT NULL AND is_validated IS NULL OR is_validated = 0 AND `description` IS NOT NULL AND `is_validated` NOT IN (1,2)");
+    $stmt = $pdo->prepare("SELECT user_ID, user_name, email, cnpj, description, `is_validated`
+FROM users
+WHERE cnpj IS NOT NULL
+  AND cnpj != ''
+  AND is_validated = 0
+  AND description IS NOT NULL
+  AND description != ''
+  AND `is_validated` NOT IN (1,2);
+");
     $stmt->execute();
     $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
