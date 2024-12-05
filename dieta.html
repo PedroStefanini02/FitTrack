@@ -852,7 +852,9 @@
         </div>
     </div>
 
+
     <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
@@ -1215,6 +1217,16 @@
             // Salva o PDF com o plano completo
             doc.save('plano_alimentar_completo.pdf');
         });
+
+        // Seleciona o botão e a seção para rolar
+document.getElementById('botao-comecar').addEventListener('click', function(e) {
+    e.preventDefault(); // Previne o comportamento padrão do link
+    // Rola suavemente até a seção com o id 'esquema-dieta'
+    document.getElementById('esquema-dieta').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
     </script>
 
 </body>

@@ -457,7 +457,10 @@
                         <button id="save-workout" class="btn btn-success">Salvar Plano de Treino</button>
                         <div id="workout-save-confirmation" class="alert alert-success"
                             style="display:none; margin-top: 10px;">Plano de treino salvo com sucesso!</div>
+                            <button id="download-treino" class="btn btn-success">Baixar Plano de Treino</button>
+
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -905,6 +908,40 @@
                 }
             });
         });
+
+        // Função para baixar o plano de treino como arquivo txt
+document.getElementById('download-treino').addEventListener('click', function() {
+    // Percorre os itens de treino montados na tela
+    let treinoPlano = '';
+    const treinoDias = document.querySelectorAll('.treino-dia');
+    
+    treinoDias.forEach(treinoDia => {
+        const dia = treinoDia.querySelector('h4').innerText;
+        treinoPlano += `Dia: ${dia}\n`;
+        
+        const treinoGrupos = treinoDia.querySelectorAll('.treino-grupo');
+        
+        treinoGrupos.forEach(treinoGrupo => {
+            const grupoMuscular = treinoGrupo.querySelector('h5').innerText;
+            treinoPlano += `  Grupo Muscular: ${grupoMuscular}\n`;
+            
+            const treinoExercicios = treinoGrupo.querySelectorAll('.treino-exercicio');
+            
+            treinoExercicios.forEach(treinoExercicio => {
+                const exercicio = treinoExercicio.querySelector('p').innerText;
+                treinoPlano += `    ${exercicio}\n`;
+            });
+        });
+    });
+    
+    // Cria o arquivo de texto
+    const blob = new Blob([treinoPlano], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'plano_de_treino.txt';
+    link.click();
+});
+
     </script>
 </body>
 
